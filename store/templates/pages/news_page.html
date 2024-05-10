@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}News{% endblock title %}
+{% block content%}
+    <h1>News page</h1>
+    <h2>Article list</h2>
+    <ul>
+        {% for article in news %}
+        <li>
+            <p>Title: {{ article.title }}</p>
+            <p>Content: {{ article.content }}</p>
+            <p>Image:</p>
+            <img src="{{ article.image.url }}" alt="article.title" height="500" width="500">
+            <p>Published Date: {{ article.published_date }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

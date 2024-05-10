@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Product Detail{% endblock title %}
+{% block content%}
+    <h1>Product Detail</h1>
+    <p>Name: {{ product.name }}</p>
+    <p>Type of Product: {{ product.type_of_product }}</p>
+    <p>Manufacturer: {{ product.manufacturer }}</p>
+    <p>Price: ${{ product.price }}</p>
+    <p>Quantity: {{ product.quantity }}</p>
+    <p>Created at (User's Time Zone): {{ created_tz }}</p>
+    <p>Created at (UTC): {{ created_utc }}</p>
+    <p>Updated at (User's Time Zone): {{ updated_tz }}</p>
+    <p>Updated at (UTC): {{ updated_utc }}</p>
+
+    <form action="{% url 'product_update' product.pk %}" method="get" style="display: inline;">
+        <button type="submit">Update</button>
+    </form>
+
+    <form action="{% url 'product_delete' product.pk %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+
+    <form action="{% url 'add_review' product.pk %}" method="get" style="display: inline;">
+        <button type="submit">Create Review</button>
+    </form>
+{% endblock content %}

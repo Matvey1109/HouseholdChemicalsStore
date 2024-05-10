@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Manufacturer List{% endblock title %}
+{% block content%}
+    <h1>Manufacturer List</h1>
+    <ul>
+        {% for manufacturer in manufacturers %}
+        <li><a href="{% url 'manufacturer_detail' manufacturer.pk %}">{{ manufacturer.name }} - {{ manufacturer.location }}</a></li>
+        {% endfor %}
+    </ul>
+    <form action="{% url 'manufacturer_create' %}" method="get" style="display: inline;">
+        <button type="submit">Create</button>
+    </form>
+{% endblock content %}

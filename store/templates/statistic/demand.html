@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Product Demand{% endblock title %}
+{% block content%}
+    <h1>Product Demand</h1>
+
+    <h2>Product in Greatest Demand</h2>
+    {% if product_in_greatest_demand %}
+        <p>Name: {{ product_in_greatest_demand.name }}</p>
+        <p>Type of Product: {{ product_in_greatest_demand.type_of_product }}</p>
+        <p>Manufacturer: {{ product_in_greatest_demand.manufacturer }}</p>
+        <p>Price: ${{ product_in_greatest_demand.price }}</p>
+        <p>Quantity: {{ product_in_greatest_demand.quantity }}</p>
+    {% else %}
+        <p>No product is currently in high demand.</p>
+    {% endif %}
+
+    <h2>Product Not in Demand</h2>
+    {% if product_not_in_demand %}
+        <ul>
+            <li>{{ product_not_in_demand.name }}</li>
+        </ul>
+    {% else %}
+        <p>All products are currently in demand.</p>
+    {% endif %}
+{% endblock content %}

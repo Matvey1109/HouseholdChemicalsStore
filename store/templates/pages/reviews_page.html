@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Reviews{% endblock title %}
+{% block content%}
+    <h1>Reviews</h1>
+    <ul>
+        {% for review in reviews %}
+            <li>
+                **{{ review.user.username }}** - {{ review.product.name }}, {{ review.rating }} stars ({{ review.date_added|date:"F j, Y" }})<br>
+                {{ review.text }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

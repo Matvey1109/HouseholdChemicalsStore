@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Type of Product List{% endblock title %}
+{% block content%}
+    <h1>Type of Product List</h1>
+    <ul>
+        {% for type_of_product in types_of_products %}
+        <li><a href="{% url 'type_of_product_detail' type_of_product.pk %}">{{ type_of_product.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <form action="{% url 'type_of_product_create' %}" method="get" style="display: inline;">
+        <button type="submit">Create</button>
+    </form>
+{% endblock content %}

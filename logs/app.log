@@ -1,0 +1,3442 @@
+Watching for file changes with StatReloader
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+VIEW: terms_page_view
+"GET /terms/ HTTP/1.1" 200 138
+VIEW: news_page_view
+"GET /news/ HTTP/1.1" 200 162
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+"GET /contacts HTTP/1.1" 301 0
+VIEW: contacts_page_view
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 44, in contacts_page_view
+    return render(request, "pages/cotacts_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: pages/cotacts_page.html
+"GET /contacts/ HTTP/1.1" 500 81804
+VIEW: contacts_page_view
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 44, in contacts_page_view
+    return render(request, "pages/cotacts_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: pages/cotacts_page.html
+"GET /contacts/ HTTP/1.1" 500 81941
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+VIEW: contacts_page_view
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such table: store_contact
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 44, in contacts_page_view
+    return render(request, "pages/contacts_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 325, in render
+    if match:
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 414, in __bool__
+    self._fetch_all()
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such table: store_contact
+"GET /contacts/ HTTP/1.1" 500 165069
+VIEW: contacts_page_view
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such table: store_contact
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 44, in contacts_page_view
+    return render(request, "pages/contacts_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 198, in render
+    len_values = len(values)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such table: store_contact
+"GET /contacts/ HTTP/1.1" 500 165292
+VIEW: contacts_page_view
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such table: store_contact
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 44, in contacts_page_view
+    return render(request, "pages/contacts_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 198, in render
+    len_values = len(values)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such table: store_contact
+"GET /contacts/ HTTP/1.1" 500 165292
+VIEW: terms_page_view
+"GET /terms/ HTTP/1.1" 200 138
+Watching for file changes with StatReloader
+VIEW: contacts_page_view
+"GET /contacts/ HTTP/1.1" 200 142
+VIEW: contacts_page_view
+"GET /contacts/ HTTP/1.1" 200 142
+"GET /admin/ HTTP/1.1" 200 10678
+"GET /admin/ HTTP/1.1" 200 10678
+"GET /admin/store/contact/ HTTP/1.1" 200 10100
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/contact/add/ HTTP/1.1" 200 13232
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+Internal Server Error: /admin/store/contact/add/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1945, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1861, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 954, in log_addition
+    object_repr=str(obj),
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/models.py", line 44, in __str__
+    return self.name
+AttributeError: 'Contact' object has no attribute 'name'
+"POST /admin/store/contact/add/ HTTP/1.1" 500 129140
+"GET /admin/ HTTP/1.1" 200 10678
+"GET /admin/store/contact/ HTTP/1.1" 200 10100
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/employee/ HTTP/1.1" 200 11370
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/employee/1/change/ HTTP/1.1" 200 13039
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/models.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/models.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/models.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/store/contact/ HTTP/1.1" 200 10100
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/contact/add/ HTTP/1.1" 200 13232
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/contact/add/ HTTP/1.1" 302 0
+"GET /admin/store/contact/ HTTP/1.1" 200 11558
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+VIEW: contacts_page_view
+"GET /contacts/ HTTP/1.1" 200 473
+"GET /media/Screenshot_2024-05-04_at_23.59.32.png HTTP/1.1" 200 6694
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+"GET /privacy_policy HTTP/1.1" 301 0
+VIEW: privacy_policy_view
+"GET /privacy_policy/ HTTP/1.1" 200 123
+Watching for file changes with StatReloader
+VIEW: privacy_policy_page_view
+"GET /privacy_policy/ HTTP/1.1" 200 123
+Not Found: /vacancies
+"GET /vacancies HTTP/1.1" 404 8110
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /vacancies HTTP/1.1" 301 0
+VIEW: vacancies_page_view
+"GET /vacancies/ HTTP/1.1" 200 143
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+"GET /admin/ HTTP/1.1" 200 11022
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 11444
+"GET /admin/store/vacancy/ HTTP/1.1" 200 10392
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/add/ HTTP/1.1" 200 11825
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/vacancy/add/ HTTP/1.1" 302 0
+"GET /admin/store/vacancy/ HTTP/1.1" 200 11856
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: vacancies_page_view
+"GET /vacancies/ HTTP/1.1" 200 245
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 8405
+"GET /reviews HTTP/1.1" 301 0
+VIEW: reviews_page_view
+"GET /reviews/ HTTP/1.1" 200 145
+"GET /products/ HTTP/1.1" 200 281
+"GET /products/create/? HTTP/1.1" 200 1227
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 12207
+"GET /admin/store/review/ HTTP/1.1" 200 10673
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/review/add/ HTTP/1.1" 200 15610
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /products/ HTTP/1.1" 200 281
+"GET /products/create/? HTTP/1.1" 200 1227
+"GET /types/ HTTP/1.1" 200 294
+"GET /types/create/? HTTP/1.1" 200 533
+"POST /types/create/? HTTP/1.1" 302 0
+"GET /types/ HTTP/1.1" 200 355
+"GET /products/ HTTP/1.1" 200 281
+"GET /products/create/? HTTP/1.1" 200 1268
+"GET /manufacturers/create/ HTTP/1.1" 200 683
+"POST /manufacturers/create/ HTTP/1.1" 302 0
+"GET /manufacturers/ HTTP/1.1" 200 367
+"GET /products/ HTTP/1.1" 200 281
+"GET /products/create/? HTTP/1.1" 200 1306
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 354
+"GET /products/1/ HTTP/1.1" 200 907
+Not Found: /products/1/add_review
+"GET /products/1/add_review HTTP/1.1" 404 8435
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/1/add_review HTTP/1.1" 301 0
+Internal Server Error: /products/1/add_review/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 82, in add_review_page_view
+    return redirect("product_detail", product_id=product.id)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_detail' with keyword arguments '{'product_id': 1}' not found. 1 pattern(s) tried: ['products/(?P<pk>[0-9]+)/\\Z']
+"GET /products/1/add_review/ HTTP/1.1" 500 93132
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 354
+"GET /products/1/ HTTP/1.1" 200 907
+"GET /products/1/add_review/ HTTP/1.1" 302 0
+"GET /products/1/ HTTP/1.1" 200 907
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/1/ HTTP/1.1" 200 907
+"GET /products/1/add_review/ HTTP/1.1" 302 0
+"GET /products/1/ HTTP/1.1" 200 907
+"GET /products/1/add_review/ HTTP/1.1" 302 0
+"GET /products/1/ HTTP/1.1" 200 907
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/1/ HTTP/1.1" 200 907
+"GET /products/1/add_review/ HTTP/1.1" 200 821
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/1/add_review/ HTTP/1.1" 200 856
+"POST /products/1/add_review/ HTTP/1.1" 302 0
+"GET /products/1/ HTTP/1.1" 200 907
+"GET /admin/ HTTP/1.1" 200 12207
+"GET /admin/store/review/ HTTP/1.1" 200 11954
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/models.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/models.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/models.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /admin/store/review/ HTTP/1.1" 200 10733
+"GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+"POST /admin/store/review/ HTTP/1.1" 302 0
+"GET /admin/store/review/ HTTP/1.1" 200 10809
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /products/1/add_review/ HTTP/1.1" 200 856
+"POST /products/1/add_review/ HTTP/1.1" 302 0
+"GET /products/1/ HTTP/1.1" 200 907
+"GET /admin/ HTTP/1.1" 200 12515
+"GET /admin/store/review/ HTTP/1.1" 200 11940
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/review/2/change/ HTTP/1.1" 200 15876
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 12948
+"GET /admin/store/promocode/ HTTP/1.1" 200 11000
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/promocode/add/ HTTP/1.1" 200 12916
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/promocode/add/ HTTP/1.1" 302 0
+"GET /admin/store/promocode/ HTTP/1.1" 200 12471
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/promocode/add/ HTTP/1.1" 200 12916
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/promocode/add/ HTTP/1.1" 302 0
+"GET /admin/store/promocode/ HTTP/1.1" 200 12736
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /promocodes HTTP/1.1" 301 0
+VIEW: promocodes_page_view
+Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 90, in promocodes_page_view
+    return render(request, "pages/promocodes_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: pages/promocodes_page.html
+"GET /promocodes/ HTTP/1.1" 500 82766
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 416
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 416
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 416
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 416
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 416
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 416
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 416
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 418
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 418
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 420
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 420
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 422
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 8528
+"GET /products/ HTTP/1.1" 200 354
+VIEW: reviews_page_view
+Internal Server Error: /reviews/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 64, in reviews_page_view
+    return render(request, "pages/reviews_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'add_review' with no arguments not found. 1 pattern(s) tried: ['products/(?P<pk>[0-9]+)/add_review/\\Z']
+"GET /reviews/ HTTP/1.1" 500 121663
+VIEW: reviews_page_view
+"GET /reviews/ HTTP/1.1" 200 270
+"GET /admin/ HTTP/1.1" 200 13647
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /admin/store/review/ HTTP/1.1" 200 12241
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/store/review/2/change/ HTTP/1.1" 200 16177
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+VIEW: reviews_page_view
+"GET /reviews/ HTTP/1.1" 200 274
+VIEW: reviews_page_view
+"GET /reviews/ HTTP/1.1" 200 274
+VIEW: reviews_page_view
+"GET /reviews/ HTTP/1.1" 200 274
+"GET /products/ HTTP/1.1" 200 354
+"GET /products/1/ HTTP/1.1" 200 1055
+VIEW: add_review_page_view
+"GET /products/1/add_review/? HTTP/1.1" 200 856
+VIEW: add_review_page_view
+"POST /products/1/add_review/? HTTP/1.1" 302 0
+"GET /products/1/ HTTP/1.1" 200 1055
+VIEW: reviews_page_view
+"GET /reviews/ HTTP/1.1" 200 404
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4162
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/login.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 13647
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 13647
+VIEW: reviews_page_view
+"GET /reviews/ HTTP/1.1" 200 404
+Watching for file changes with StatReloader
+"GET /products HTTP/1.1" 301 0
+"GET /products/ HTTP/1.1" 200 945
+"GET /products/ HTTP/1.1" 200 971
+"GET /products/ HTTP/1.1" 200 967
+"GET /admin/ HTTP/1.1" 200 13647
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /admin/store/product/ HTTP/1.1" 200 12968
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/store/product/add/ HTTP/1.1" 200 16521
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"POST /admin/store/product/add/ HTTP/1.1" 302 0
+"GET /admin/store/product/ HTTP/1.1" 200 13513
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /products/ HTTP/1.1" 200 1035
+"GET /products/1/ HTTP/1.1" 200 1055
+"GET /products/?sort=ascending HTTP/1.1" 200 1035
+"GET /products/?sort=descending HTTP/1.1" 200 1035
+"GET /products/?sort=descending HTTP/1.1" 200 1035
+"GET /products/?search=prj HTTP/1.1" 200 1035
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/product_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/product_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/product_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/product_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/product_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/product_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/product_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1035
+"GET /products/?sort=ascending HTTP/1.1" 200 1035
+"GET /products/?sort=descending HTTP/1.1" 200 1035
+"GET /products/?sort=descending HTTP/1.1" 200 1035
+"GET /products/?search=pr HTTP/1.1" 200 1035
+"GET /products/?search=prj HTTP/1.1" 200 962
+"GET /products/?search= HTTP/1.1" 200 1035
+"GET /products/?search=+ HTTP/1.1" 200 967
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /admin/store/product/ HTTP/1.1" 200 13315
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/store/manufacturer/ HTTP/1.1" 200 13016
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /superuser/demand HTTP/1.1" 200 524
+"GET /admin/ HTTP/1.1" 200 13991
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/demand HTTP/1.1" 200 443
+"GET /superuser/demand HTTP/1.1" 200 449
+"GET /superuser/demand HTTP/1.1" 200 449
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/demand HTTP/1.1" 200 444
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 2
+"GET /superuser/monthly_sales HTTP/1.1" 200 2
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /admin/store/order/ HTTP/1.1" 200 10967
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /orders/ HTTP/1.1" 200 275
+"GET /orders/create/? HTTP/1.1" 200 1198
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 340
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /admin/store/client/ HTTP/1.1" 200 12949
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /admin/store/product/ HTTP/1.1" 200 13315
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/2/change/ HTTP/1.1" 200 16760
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/store/product/ HTTP/1.1" 200 13315
+"GET /admin/store/order/ HTTP/1.1" 200 12267
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/1/change/ HTTP/1.1" 200 17537
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /superuser/monthly_sales HTTP/1.1" 200 58
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 58
+"GET /superuser/monthly_sales HTTP/1.1" 200 58
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 143
+"GET /superuser/monthly_sales HTTP/1.1" 200 143
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 128
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 36
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 55
+"GET /superuser/monthly_sales HTTP/1.1" 200 55
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 128
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 55
+"GET /superuser/monthly_sales HTTP/1.1" 200 55
+"GET /admin/store/order/1/change/ HTTP/1.1" 200 17537
+Watching for file changes with StatReloader
+Not Found: /annual_sales
+"GET /annual_sales HTTP/1.1" 404 8819
+"GET /superuser/annual_sales HTTP/1.1" 200 11
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/annual_sales HTTP/1.1" 200 13
+"GET /superuser/annual_sales HTTP/1.1" 200 13
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/annual_sales HTTP/1.1" 200 13
+Not Found: /superuser/
+"GET /superuser/ HTTP/1.1" 404 8813
+"GET /superuser/monthly_sales HTTP/1.1" 200 59
+Watching for file changes with StatReloader
+Internal Server Error: /superuser/sales_analysis
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 92, in sales_analysis_view
+    sales_volume_pivot = pd.pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 102, in pivot_table
+    table = __internal_pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 148, in __internal_pivot_table
+    raise KeyError(i)
+KeyError: 'product_quantities__quantity'
+"GET /superuser/sales_analysis HTTP/1.1" 500 85694
+Internal Server Error: /superuser/sales_analysis
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 92, in sales_analysis_view
+    sales_volume_pivot = pd.pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 102, in pivot_table
+    table = __internal_pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 148, in __internal_pivot_table
+    raise KeyError(i)
+KeyError: 'product_quantities__quantity'
+"GET /superuser/sales_analysis HTTP/1.1" 500 85694
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /superuser/sales_analysis
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 92, in sales_analysis_view
+    sales_volume_pivot = pd.pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 102, in pivot_table
+    table = __internal_pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 148, in __internal_pivot_table
+    raise KeyError(i)
+KeyError: 'product_quantity'
+"GET /superuser/sales_analysis HTTP/1.1" 500 85629
+Watching for file changes with StatReloader
+"GET /superuser/sales_analysis HTTP/1.1" 200 3125
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /superuser/client_chart HTTP/1.1" 200 14212
+"GET /superuser/client_chart HTTP/1.1" 200 14232
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /admin/store/client/ HTTP/1.1" 200 12949
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/2/change/ HTTP/1.1" 200 13902
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/ HTTP/1.1" 200 12949
+"GET /register/ HTTP/1.1" 200 2458
+"POST /register/ HTTP/1.1" 200 2741
+"POST /register/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 474
+"GET /superuser/annual_sales HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/superuser/annual_sales HTTP/1.1" 404 9000
+"GET /superuser/client_chart HTTP/1.1" 200 13950
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/superuser/monthly_sales HTTP/1.1" 404 8858
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3683
+"GET /static/admin/css/login.css HTTP/1.1" 304 0
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 13991
+Not Found: /superuser/client_chart
+"GET /superuser/client_chart HTTP/1.1" 404 8849
+"GET /superuser/monthly_sales HTTP/1.1" 200 543
+"GET /products/ HTTP/1.1" 200 1035
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 543
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /superuser/monthly_sales
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 64, in monthly_sales_volume_view
+    pivot_table = df.pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/frame.py", line 9509, in pivot_table
+    return pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 102, in pivot_table
+    table = __internal_pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 172, in __internal_pivot_table
+    grouped = data.groupby(keys, observed=observed_bool, sort=sort, dropna=dropna)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/frame.py", line 9183, in groupby
+    return DataFrameGroupBy(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/groupby/groupby.py", line 1329, in __init__
+    grouper, exclusions, obj = get_grouper(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/groupby/grouper.py", line 1043, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'curren_month'
+"GET /superuser/monthly_sales HTTP/1.1" 500 109376
+Internal Server Error: /superuser/monthly_sales
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 64, in monthly_sales_volume_view
+    pivot_table = df.pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/frame.py", line 9509, in pivot_table
+    return pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 102, in pivot_table
+    table = __internal_pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 172, in __internal_pivot_table
+    grouped = data.groupby(keys, observed=observed_bool, sort=sort, dropna=dropna)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/frame.py", line 9183, in groupby
+    return DataFrameGroupBy(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/groupby/groupby.py", line 1329, in __init__
+    grouper, exclusions, obj = get_grouper(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/groupby/grouper.py", line 1043, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'curren_month'
+"GET /superuser/monthly_sales HTTP/1.1" 500 109376
+Internal Server Error: /superuser/monthly_sales
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 64, in monthly_sales_volume_view
+    pivot_table = df.pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/frame.py", line 9509, in pivot_table
+    return pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 102, in pivot_table
+    table = __internal_pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 172, in __internal_pivot_table
+    grouped = data.groupby(keys, observed=observed_bool, sort=sort, dropna=dropna)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/frame.py", line 9183, in groupby
+    return DataFrameGroupBy(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/groupby/groupby.py", line 1329, in __init__
+    grouper, exclusions, obj = get_grouper(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/groupby/grouper.py", line 1043, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'curren_month'
+"GET /superuser/monthly_sales HTTP/1.1" 500 109376
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 543
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /superuser/monthly_sales
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 64, in monthly_sales_volume_view
+    pivot_table = df.pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/frame.py", line 9509, in pivot_table
+    return pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 102, in pivot_table
+    table = __internal_pivot_table(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/reshape/pivot.py", line 172, in __internal_pivot_table
+    grouped = data.groupby(keys, observed=observed_bool, sort=sort, dropna=dropna)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/frame.py", line 9183, in groupby
+    return DataFrameGroupBy(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/groupby/groupby.py", line 1329, in __init__
+    grouper, exclusions, obj = get_grouper(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/pandas/core/groupby/grouper.py", line 1043, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'curren_month'
+"GET /superuser/monthly_sales HTTP/1.1" 500 109376
+Watching for file changes with StatReloader
+"GET /superuser/monthly_sales HTTP/1.1" 200 543
+"GET /superuser/annual_sales HTTP/1.1" 200 13
+Watching for file changes with StatReloader
+Internal Server Error: /superuser/sales_forecast
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 121, in sales_forecast_view
+    forecast_data["Month"].append(calendar.month_name[month])
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/calendar.py", line 61, in __getitem__
+    funcs = self._months[i]
+IndexError: list index out of range
+"GET /superuser/sales_forecast HTTP/1.1" 500 78482
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 8965
+"GET /superuser/plot_statistics HTTP/1.1" 200 30963
+"GET /superuser/plot_statistics HTTP/1.1" 200 30963
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/plot_statistics HTTP/1.1" 200 30963
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/plot_statistics HTTP/1.1" 200 32432
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/plot_statistics HTTP/1.1" 200 30963
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/plot_statistics HTTP/1.1" 200 32432
+"GET /superuser/plot_statistics HTTP/1.1" 200 32432
+"GET /superuser/plot_statistics HTTP/1.1" 200 32432
+"GET /superuser/plot_statistics HTTP/1.1" 200 32432
+"GET /types/ HTTP/1.1" 200 355
+"GET /types/create/? HTTP/1.1" 200 533
+"POST /types/create/? HTTP/1.1" 302 0
+"GET /types/ HTTP/1.1" 200 417
+"GET /products/ HTTP/1.1" 200 1035
+"GET /products/?sort=descending HTTP/1.1" 200 1035
+"GET /products/create/? HTTP/1.1" 200 1348
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 1107
+"GET /orders/ HTTP/1.1" 200 340
+"GET /orders/create/? HTTP/1.1" 200 1413
+"GET /superuser/plot_statistics HTTP/1.1" 200 36731
+Watching for file changes with StatReloader
+"GET /superuser/plot_statistics HTTP/1.1" 200 36488
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 8965
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 12603
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /admin/store/product/ HTTP/1.1" 200 14328
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /admin/store/product/?type_of_product__id__exact=1 HTTP/1.1" 200 14486
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/?type_of_product__id__exact=2 HTTP/1.1" 200 14086
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/? HTTP/1.1" 200 14328
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/3/change/ HTTP/1.1" 200 16818
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/store/client/ HTTP/1.1" 200 13365
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/3/change/ HTTP/1.1" 200 13911
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/ HTTP/1.1" 200 13365
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast HTTP/1.1" 200 243
+"GET /superuser/sales_forecast HTTP/1.1" 200 243
+"GET /admin/store/order/ HTTP/1.1" 200 12267
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /superuser/sales_forecast
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 178, in sales_forecast_view
+    slope, intercept = calculate_linear_trend(months, average_sales_values)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 153, in calculate_linear_trend
+    slope = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x)
+decimal.InvalidOperation: [<class 'decimal.DivisionUndefined'>]
+"GET /superuser/sales_forecast HTTP/1.1" 500 74214
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/store/order/add/ HTTP/1.1" 200 17300
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/companyinfo/ HTTP/1.1" 200 11014
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/employee/ HTTP/1.1" 200 12251
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /register/ HTTP/1.1" 200 2458
+"POST /register/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 468
+"GET /register/ HTTP/1.1" 200 2458
+"POST /register/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 468
+"GET /logout/ HTTP/1.1" 200 362
+"POST /logout/ HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 1107
+"GET /login/ HTTP/1.1" 200 789
+"POST /login/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 456
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /admin/store/order/ HTTP/1.1" 200 12267
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/add/ HTTP/1.1" 200 17370
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /register/ HTTP/1.1" 200 2458
+"POST /register/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 470
+"GET /register/ HTTP/1.1" 200 2458
+"POST /register/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 470
+"GET /login/ HTTP/1.1" 200 789
+"POST /login/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 456
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /admin/store/order/ HTTP/1.1" 200 12267
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/add/ HTTP/1.1" 200 17440
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /orders/ HTTP/1.1" 200 340
+"GET /orders/create/? HTTP/1.1" 200 1553
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 405
+"GET /orders/create/? HTTP/1.1" 200 1553
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 473
+Internal Server Error: /superuser/sales_forecast
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 178, in sales_forecast_view
+    slope, intercept = calculate_linear_trend(months, average_sales_values)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 153, in calculate_linear_trend
+    slope = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x)
+decimal.InvalidOperation: [<class 'decimal.DivisionUndefined'>]
+"GET /superuser/sales_forecast HTTP/1.1" 500 74359
+"GET /superuser/plot_statistics HTTP/1.1" 200 36541
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /superuser/sales_forecast
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 178, in sales_forecast_view
+    slope, intercept = calculate_linear_trend(months, average_sales_values)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 153, in calculate_linear_trend
+    slope = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x)
+decimal.InvalidOperation: [<class 'decimal.DivisionUndefined'>]
+"GET /superuser/sales_forecast HTTP/1.1" 500 74496
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /superuser/sales_forecast
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 183, in sales_forecast_view
+    slope, intercept = calculate_linear_trend(months, average_sales_values)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py", line 156, in calculate_linear_trend
+    slope = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x)
+decimal.InvalidOperation: [<class 'decimal.DivisionUndefined'>]
+"GET /superuser/sales_forecast HTTP/1.1" 500 74466
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast HTTP/1.1" 200 415
+"GET /admin/ HTTP/1.1" 200 13991
+"GET /admin/store/order/ HTTP/1.1" 200 12878
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/3/change/ HTTP/1.1" 200 17851
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 12878
+"GET /admin/store/order/2/change/ HTTP/1.1" 200 17799
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 12878
+"GET /admin/store/order/1/change/ HTTP/1.1" 200 17754
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast HTTP/1.1" 200 415
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/permssion_views/superuser_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast HTTP/1.1" 200 415
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast HTTP/1.1" 200 415
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+"GET /types/ HTTP/1.1" 200 417
+"GET /products/ HTTP/1.1" 200 1107
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /aa
+"GET /aa HTTP/1.1" 404 9085
+VIEW: promocodes_page_view
+"GET /promocodes/ HTTP/1.1" 200 422
+"GET /profile/ HTTP/1.1" 200 456
+"GET /admin/store/client/ HTTP/1.1" 200 14179
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /admin/store/client/2/change/ HTTP/1.1" 200 13902
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /register/ HTTP/1.1" 200 2458
+"GET /admin/store/client/ HTTP/1.1" 200 14179
+"POST /register/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 470
+"GET /clients/ HTTP/1.1" 200 659
+"GET /profile/ HTTP/1.1" 200 470
+"GET /logout/ HTTP/1.1" 200 362
+"POST /logout/ HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 1107
+"GET /login/ HTTP/1.1" 200 789
+"POST /login/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 470
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /orders/ HTTP/1.1" 200 473
+"GET /orders/ HTTP/1.1" 200 473
+"GET /logout/ HTTP/1.1" 200 362
+"POST /logout/ HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 1107
+Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py", line 9, in wrapper
+    return redirect("")
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+"GET /orders/ HTTP/1.1" 500 85979
+Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py", line 9, in wrapper
+    return redirect("home")
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+"GET /orders/ HTTP/1.1" 500 86124
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /orders/ HTTP/1.1" 302 0
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /ordefs
+"GET /ordefs HTTP/1.1" 404 9097
+"GET /orders/ HTTP/1.1" 302 0
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /orders/ HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+"GET /logout/ HTTP/1.1" 200 362
+"GET /login/ HTTP/1.1" 200 789
+"POST /login/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 470
+"GET /orders/ HTTP/1.1" 200 473
+"GET /orders/2/ HTTP/1.1" 200 784
+"GET /orders/create/? HTTP/1.1" 200 1589
+"GET /login/ HTTP/1.1" 200 789
+"POST /login/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 456
+"GET /orders/ HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+"GET /superuser/plot_statistics HTTP/1.1" 200 36860
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+"GET /superuser/plot_statistics HTTP/1.1" 200 36860
+"GET /admin/store/client/ HTTP/1.1" 200 14589
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /orders/ HTTP/1.1" 200 473
+"GET /products/ HTTP/1.1" 200 1107
+"GET /profile/ HTTP/1.1" 200 456
+"GET /login/ HTTP/1.1" 200 789
+"POST /login/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 470
+"GET /orders/ HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1107
+"GET /products/2/ HTTP/1.1" 200 1049
+"GET /orders/ HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+"GET /orders/create/ HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /orders/ HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+"GET /orders/create/ HTTP/1.1" 200 1589
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1107
+"GET /profile/ HTTP/1.1" 200 470
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/order_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/store/client/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/store/client/ HTTP/1.1" 200 3708
+"GET /static/admin/css/login.css HTTP/1.1" 304 0
+"POST /admin/login/?next=/admin/store/client/ HTTP/1.1" 302 0
+"GET /admin/store/client/ HTTP/1.1" 200 14899
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/pickuppoint/ HTTP/1.1" 200 11329
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/pickuppoint/add/ HTTP/1.1" 200 12109
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/pickuppoint/add/ HTTP/1.1" 302 0
+"GET /admin/store/pickuppoint/ HTTP/1.1" 200 12813
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /login/ HTTP/1.1" 200 789
+"POST /login/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 470
+Not Found: /pickuppoints
+"GET /pickuppoints HTTP/1.1" 404 9247
+"GET /pickuppoint HTTP/1.1" 301 0
+VIEW: pickuppoint_page_view
+"GET /pickuppoint/ HTTP/1.1" 200 221
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /pickuppoint/
+"GET /pickuppoint/ HTTP/1.1" 404 9249
+Not Found: /pickuppoins
+"GET /pickuppoins HTTP/1.1" 404 9246
+"GET /pickuppoints HTTP/1.1" 301 0
+VIEW: pickuppoint_page_view
+"GET /pickuppoints/ HTTP/1.1" 200 221
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /aa
+"GET /aa HTTP/1.1" 404 9219
+"GET /superuser/plot_statistics HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 139
+"GET /login/ HTTP/1.1" 200 789
+"POST /login/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 456
+"GET /superuser/plot_statistics HTTP/1.1" 200 36860
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast HTTP/1.1" 200 609
+"GET /superuser/sales_forecast HTTP/1.1" 200 612
+"GET /superuser/sales_forecast HTTP/1.1" 200 615
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast HTTP/1.1" 200 615
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast HTTP/1.1" 200 615
+VIEW: home_page_view
+VIEW: home_page_view
+VIEW: home_page_view
+VIEW: home_page_view
+VIEW: home_page_view
+VIEW: home_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: about_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 9246
+VIEW: news_page_view
+"GET /news/ HTTP/1.1" 200 162
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+Not Found: /accounts/login/
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+"GET /orders/ HTTP/1.1" 200 473
+"GET /orders/2/ HTTP/1.1" 200 784
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 9246
+"GET /products/ HTTP/1.1" 200 1107
+"GET /products/2/ HTTP/1.1" 200 1049
+"GET /clients/ HTTP/1.1" 200 659
+"GET /clients/4/ HTTP/1.1" 200 719
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 215
+Watching for file changes with StatReloader
+VIEW: about_page_view
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 35, in about_page_view
+    return render(request, "pages/about_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'About' not found. 'About' is not a valid view function or pattern name.
+"GET /about/ HTTP/1.1" 500 138111
+VIEW: about_page_view
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 35, in about_page_view
+    return render(request, "pages/about_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'About' not found. 'About' is not a valid view function or pattern name.
+"GET /about/ HTTP/1.1" 500 138111
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 424
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 325
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 325
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 411
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 325
+VIEW: about_page_view
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/pages_views.py", line 35, in about_page_view
+    return render(request, "pages/about_page.html", context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'pickuppoints' not found. 'pickuppoints' is not a valid view function or pattern name.
+"GET /about/ HTTP/1.1" 500 139753
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 1338
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 1338
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 325
+VIEW: about_page_view
+"GET /about/? HTTP/1.1" 200 1338
+VIEW: news_page_view
+"GET /news/? HTTP/1.1" 200 162
+VIEW: terms_page_view
+"GET /terms/? HTTP/1.1" 200 138
+VIEW: contacts_page_view
+"GET /contacts/? HTTP/1.1" 200 472
+"GET /media/Screenshot_2024-05-04_at_23.59.32.png HTTP/1.1" 304 0
+VIEW: privacy_policy_page_view
+"GET /privacy_policy/? HTTP/1.1" 200 123
+VIEW: vacancies_page_view
+"GET /vacancies/? HTTP/1.1" 200 245
+VIEW: reviews_page_view
+"GET /reviews/? HTTP/1.1" 200 404
+VIEW: promocodes_page_view
+"GET /promocodes/? HTTP/1.1" 200 422
+VIEW: pickuppoint_page_view
+"GET /pickuppoints/? HTTP/1.1" 200 221
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 325
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 9246
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 1338
+VIEW: reviews_page_view
+"GET /reviews/? HTTP/1.1" 200 404
+VIEW: pickuppoint_page_view
+"GET /pickuppoints/? HTTP/1.1" 200 221
+"GET /profile/ HTTP/1.1" 200 456
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 1338
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 1596
+"GET /employees/? HTTP/1.1" 200 462
+"GET /manufacturers/? HTTP/1.1" 200 367
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 2645
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 2531
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 2531
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 3276
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 3276
+"GET /superuser/demand? HTTP/1.1" 200 437
+"GET /superuser/monthly_sales? HTTP/1.1" 200 659
+"GET /superuser/annual_sales? HTTP/1.1" 200 14
+"GET /superuser/plot_statistics? HTTP/1.1" 200 36860
+"GET /superuser/sales_forecast? HTTP/1.1" 200 615
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 3462
+VIEW: about_page_view
+"GET /about/? HTTP/1.1" 200 3276
+VIEW: news_page_view
+"GET /news/? HTTP/1.1" 200 3299
+VIEW: terms_page_view
+"GET /terms/? HTTP/1.1" 200 3275
+VIEW: contacts_page_view
+"GET /contacts/? HTTP/1.1" 200 3607
+VIEW: privacy_policy_page_view
+"GET /privacy_policy/? HTTP/1.1" 200 3260
+VIEW: vacancies_page_view
+"GET /vacancies/? HTTP/1.1" 200 3380
+VIEW: reviews_page_view
+"GET /reviews/? HTTP/1.1" 200 3541
+VIEW: promocodes_page_view
+"GET /promocodes/? HTTP/1.1" 200 3557
+VIEW: pickuppoint_page_view
+"GET /pickuppoints/? HTTP/1.1" 200 3358
+"GET /employees/? HTTP/1.1" 200 462
+"GET /products/? HTTP/1.1" 200 1107
+"GET /products/3/ HTTP/1.1" 200 1054
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/urls.py changed, reloading.
+Watching for file changes with StatReloader
+VIEW: pickuppoint_page_view
+"GET /pickuppoints/? HTTP/1.1" 200 3358
+"GET /products/? HTTP/1.1" 200 1107
+"GET /products/3/ HTTP/1.1" 200 1054
+VIEW: add_review_page_view
+"GET /products/3/add_review/? HTTP/1.1" 200 3990
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 3462
+Watching for file changes with StatReloader
+"GET /profile/? HTTP/1.1" 200 3593
+"GET /admin/ HTTP/1.1" 200 14789
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /admin/store/user/ HTTP/1.1" 200 14564
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/store/user/10/change/ HTTP/1.1" 200 28736
+"GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 3462
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 9251
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 3462
+"GET /admin/ HTTP/1.1" 200 14789
+"GET /admin/store/article/ HTTP/1.1" 200 11291
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/article/add/ HTTP/1.1" 200 13339
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/article/add/ HTTP/1.1" 302 0
+"GET /admin/store/article/ HTTP/1.1" 200 12932
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /admin/store/article/add/ HTTP/1.1" 200 13339
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/article/add/ HTTP/1.1" 302 0
+"GET /admin/store/article/ HTTP/1.1" 200 13218
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/article/add/ HTTP/1.1" 200 13339
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/article/add/ HTTP/1.1" 302 0
+"GET /admin/store/article/ HTTP/1.1" 200 13559
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 200 104111
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+VIEW: about_page_view
+"GET /about/? HTTP/1.1" 200 3276
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+VIEW: news_page_view
+"GET /news/? HTTP/1.1" 200 5819
+"GET /media/Screenshot_2024-05-10_at_09.18.49.png HTTP/1.1" 200 106194
+"GET /media/Screenshot_2024-05-10_at_09.18.21.png HTTP/1.1" 200 83755
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+VIEW: about_page_view
+"GET /about/? HTTP/1.1" 200 3276
+VIEW: home_page_view
+"GET /? HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+"GET /admin/ HTTP/1.1" 200 15340
+"GET /admin/store/article/ HTTP/1.1" 200 13324
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/ HTTP/1.1" 200 15340
+"GET /admin/store/companyinfo/ HTTP/1.1" 200 11324
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/companyinfo/add/ HTTP/1.1" 200 12102
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/companyinfo/add/ HTTP/1.1" 302 0
+"GET /admin/store/companyinfo/ HTTP/1.1" 200 14011
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+VIEW: about_page_view
+"GET /about/? HTTP/1.1" 200 3683
+VIEW: news_page_view
+"GET /news/? HTTP/1.1" 200 5819
+"GET /media/Screenshot_2024-05-10_at_09.18.49.png HTTP/1.1" 304 0
+"GET /media/Screenshot_2024-05-10_at_09.18.21.png HTTP/1.1" 304 0
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+VIEW: terms_page_view
+"GET /terms/? HTTP/1.1" 200 3275
+"GET /admin/ HTTP/1.1" 200 15544
+"GET /admin/store/term/ HTTP/1.1" 200 11270
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/add/ HTTP/1.1" 200 12690
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/term/add/ HTTP/1.1" 302 0
+"GET /admin/store/term/ HTTP/1.1" 200 12827
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/add/ HTTP/1.1" 200 12690
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/term/add/ HTTP/1.1" 302 0
+"GET /admin/store/term/ HTTP/1.1" 200 13106
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/add/ HTTP/1.1" 200 12690
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/term/add/ HTTP/1.1" 302 0
+"GET /admin/store/term/ HTTP/1.1" 200 13447
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/add/ HTTP/1.1" 200 12690
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/term/add/ HTTP/1.1" 302 0
+"GET /admin/store/term/ HTTP/1.1" 200 13836
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: terms_page_view
+"GET /terms/ HTTP/1.1" 200 5972
+VIEW: contacts_page_view
+"GET /contacts/? HTTP/1.1" 200 3607
+"GET /media/Screenshot_2024-05-04_at_23.59.32.png HTTP/1.1" 304 0
+"GET /admin/ HTTP/1.1" 200 15692
+"GET /admin/store/article/ HTTP/1.1" 200 13324
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/ HTTP/1.1" 200 14899
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/add/ HTTP/1.1" 200 13937
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/ HTTP/1.1" 200 14899
+"GET /clients/ HTTP/1.1" 200 3796
+"GET /admin/ HTTP/1.1" 200 15692
+"GET /admin/ HTTP/1.1" 200 15692
+"GET /admin/store/user/ HTTP/1.1" 200 14564
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+"GET /register/? HTTP/1.1" 200 5595
+"GET /admin/store/client/ HTTP/1.1" 200 14899
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3603
+"GET /admin/store/client/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/store/client/ HTTP/1.1" 200 3706
+"GET /static/admin/css/login.css HTTP/1.1" 304 0
+"POST /admin/login/?next=/admin/store/client/ HTTP/1.1" 302 0
+"GET /admin/store/client/ HTTP/1.1" 200 15303
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 200 5765
+"GET /admin/store/client/ HTTP/1.1" 200 15303
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3605
+"GET /admin/store/client/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/store/client/ HTTP/1.1" 200 3707
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3605
+"GET /register/? HTTP/1.1" 200 5595
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3607
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3682
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 15692
+"GET /admin/store/client/ HTTP/1.1" 200 16530
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /clients/? HTTP/1.1" 200 4093
+"GET /clients/create/? HTTP/1.1" 200 4098
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3611
+"GET /admin/store/client/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/store/client/ HTTP/1.1" 200 3710
+"POST /admin/login/?next=/admin/store/client/ HTTP/1.1" 302 0
+"GET /admin/store/client/ HTTP/1.1" 200 16952
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/ HTTP/1.1" 200 16952
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/employee/ HTTP/1.1" 200 13078
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3611
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3615
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3609
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3611
+"GET /admin/store/employee/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/store/employee/ HTTP/1.1" 200 3713
+"POST /admin/login/?next=/admin/store/employee/ HTTP/1.1" 302 0
+"GET /admin/store/employee/ HTTP/1.1" 200 14128
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3605
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3607
+"GET /admin/store/employee/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/store/employee/ HTTP/1.1" 200 3711
+"POST /admin/login/?next=/admin/store/employee/ HTTP/1.1" 302 0
+"GET /admin/store/employee/ HTTP/1.1" 200 14642
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /register/? HTTP/1.1" 200 5595
+"POST /register/? HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3615
+"GET /admin/store/employee/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/store/employee/ HTTP/1.1" 200 3715
+"POST /admin/login/?next=/admin/store/employee/ HTTP/1.1" 302 0
+"GET /admin/store/employee/ HTTP/1.1" 200 14913
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/employee/ HTTP/1.1" 200 14913
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/manufacturer/ HTTP/1.1" 200 13326
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /manufacturers/? HTTP/1.1" 200 3504
+"GET /manufacturers/1/ HTTP/1.1" 200 3733
+"GET /manufacturers/1/ HTTP/1.1" 200 3733
+"GET /manufacturers/create/? HTTP/1.1" 200 3820
+"POST /manufacturers/create/? HTTP/1.1" 302 0
+"GET /manufacturers/ HTTP/1.1" 200 3589
+"GET /manufacturers/create/? HTTP/1.1" 200 3820
+"POST /manufacturers/create/? HTTP/1.1" 302 0
+"GET /manufacturers/ HTTP/1.1" 200 3678
+"GET /manufacturers/create/? HTTP/1.1" 200 3820
+"POST /manufacturers/create/? HTTP/1.1" 302 0
+"GET /manufacturers/ HTTP/1.1" 200 3759
+"GET /manufacturers/create/? HTTP/1.1" 200 3820
+"POST /manufacturers/create/? HTTP/1.1" 302 0
+"GET /manufacturers/ HTTP/1.1" 200 3843
+"GET /manufacturers/create/? HTTP/1.1" 200 3820
+"POST /manufacturers/create/? HTTP/1.1" 302 0
+"GET /manufacturers/ HTTP/1.1" 200 3925
+"GET /admin/store/manufacturer/ HTTP/1.1" 200 15115
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/manufacturer/?location=Canada HTTP/1.1" 200 13748
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/manufacturer/?location=France HTTP/1.1" 200 13734
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/manufacturer/?location=UK HTTP/1.1" 200 14050
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/manufacturer/?location=USA HTTP/1.1" 200 14088
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 13188
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/pickuppoint/ HTTP/1.1" 200 12605
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: pickuppoint_page_view
+"GET /pickuppoints/? HTTP/1.1" 200 3358
+"GET /admin/store/pickuppoint/add/ HTTP/1.1" 200 12109
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/pickuppoint/add/ HTTP/1.1" 302 0
+"GET /admin/store/pickuppoint/ HTTP/1.1" 200 13074
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/pickuppoint/add/ HTTP/1.1" 200 12109
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/pickuppoint/add/ HTTP/1.1" 302 0
+"GET /admin/store/pickuppoint/ HTTP/1.1" 200 13332
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 13188
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/ HTTP/1.1" 200 14638
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/promocode/ HTTP/1.1" 200 12842
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/review/ HTTP/1.1" 200 12806
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/ HTTP/1.1" 200 13588
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 12913
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/user/ HTTP/1.1" 200 17669
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/ HTTP/1.1" 200 12555
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/add/ HTTP/1.1" 200 12724
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/vacancy/add/ HTTP/1.1" 302 0
+"GET /admin/store/vacancy/ HTTP/1.1" 200 13037
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/1/change/ HTTP/1.1" 200 12963
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/ HTTP/1.1" 200 12831
+"GET /admin/store/vacancy/add/ HTTP/1.1" 200 12724
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/vacancy/add/ HTTP/1.1" 302 0
+"GET /admin/store/vacancy/ HTTP/1.1" 200 13318
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/add/ HTTP/1.1" 200 12724
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/vacancy/add/ HTTP/1.1" 302 0
+"GET /admin/store/vacancy/ HTTP/1.1" 200 13615
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/add/ HTTP/1.1" 200 12724
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/vacancy/add/ HTTP/1.1" 302 0
+"GET /admin/store/vacancy/ HTTP/1.1" 200 13936
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 12913
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/add/ HTTP/1.1" 200 12110
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 12913
+"GET /admin/store/typeofproduct/add/ HTTP/1.1" 200 12110
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/typeofproduct/add/ HTTP/1.1" 302 0
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 13405
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/add/ HTTP/1.1" 200 12110
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/typeofproduct/add/ HTTP/1.1" 302 0
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 13683
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: pickuppoint_page_view
+"GET /pickuppoints/? HTTP/1.1" 200 3495
+Internal Server Error: /superuser/plot_statistics
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/decorators.py", line 7, in wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py", line 136, in plot_statistics_view
+    plt.bar(product_labels, volume_values)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/matplotlib/pyplot.py", line 2754, in bar
+    return gca().bar(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/matplotlib/__init__.py", line 1465, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/matplotlib/axes/_axes.py", line 2524, in bar
+    r = mpatches.Rectangle(
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/matplotlib/patches.py", line 732, in __init__
+    self._convert_units()  # Validate the inputs.
+  File "/Users/mac/Desktop/253505_KASIAKOU_10/.venv/lib/python3.10/site-packages/matplotlib/patches.py", line 743, in _convert_units
+    y1 = self.convert_yunits(self._y0 + self._height)
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+"GET /superuser/plot_statistics? HTTP/1.1" 500 104288
+"GET /products/? HTTP/1.1" 200 4244
+"GET /products/1/ HTTP/1.1" 200 4191
+"GET /products/2/ HTTP/1.1" 200 4186
+"GET /products/3/ HTTP/1.1" 200 4191
+"GET /products/create/? HTTP/1.1" 200 4814
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 4326
+"GET /products/create/? HTTP/1.1" 200 4814
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 4408
+"GET /products/create/? HTTP/1.1" 200 4814
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 4488
+"GET /products/create/? HTTP/1.1" 200 4814
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 4564
+"GET /superuser/sales_forecast? HTTP/1.1" 200 3754
+"GET /superuser/plot_statistics? HTTP/1.1" 200 41765
+"GET /superuser/sales_forecast? HTTP/1.1" 200 3754
+"GET /products/? HTTP/1.1" 200 4564
+"GET /products/create/? HTTP/1.1" 200 4814
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 4646
+"GET /products/create/? HTTP/1.1" 200 4814
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 4722
+"GET /products/create/? HTTP/1.1" 200 4814
+"POST /products/create/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 4799
+"GET /products/10/ HTTP/1.1" 200 4210
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 13465
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/user/ HTTP/1.1" 200 17669
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/ HTTP/1.1" 200 13712
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/user/ HTTP/1.1" 200 17669
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 13465
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/ HTTP/1.1" 200 17375
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /superuser/sales_forecast? HTTP/1.1" 200 3754
+"GET /superuser/plot_statistics? HTTP/1.1" 200 43397
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/store/views/statistic_views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /superuser/sales_forecast? HTTP/1.1" 200 3754
+"GET /superuser/plot_statistics? HTTP/1.1" 200 43397
+"GET /superuser/annual_sales? HTTP/1.1" 200 14
+"GET /superuser/monthly_sales? HTTP/1.1" 200 3796
+"GET /superuser/demand? HTTP/1.1" 200 3582
+"GET /admin/store/article/ HTTP/1.1" 200 13324
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/client/ HTTP/1.1" 200 16952
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/companyinfo/ HTTP/1.1" 200 13402
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/contact/ HTTP/1.1" 200 12551
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: contacts_page_view
+"GET /contacts/? HTTP/1.1" 200 3607
+"GET /admin/store/contact/add/ HTTP/1.1" 200 14751
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/contact/add/ HTTP/1.1" 302 0
+"GET /admin/store/contact/ HTTP/1.1" 200 13003
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/contact/add/ HTTP/1.1" 200 14751
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/store/contact/add/ HTTP/1.1" 302 0
+"GET /admin/store/contact/ HTTP/1.1" 200 13261
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/employee/ HTTP/1.1" 200 14913
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/manufacturer/ HTTP/1.1" 200 15115
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 13188
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/pickuppoint/ HTTP/1.1" 200 13126
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/ HTTP/1.1" 200 17375
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/promocode/ HTTP/1.1" 200 12842
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/review/ HTTP/1.1" 200 12806
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/ HTTP/1.1" 200 13588
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 13465
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/user/ HTTP/1.1" 200 17669
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/ HTTP/1.1" 200 13712
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/ HTTP/1.1" 200 13588
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: vacancies_page_view
+"GET /vacancies/? HTTP/1.1" 200 4234
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 13465
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/user/ HTTP/1.1" 200 17669
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 13465
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/ HTTP/1.1" 200 13588
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/review/ HTTP/1.1" 200 12806
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/vacancy/ HTTP/1.1" 200 13712
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /products/? HTTP/1.1" 200 4799
+"GET /products/9/ HTTP/1.1" 200 4194
+VIEW: add_review_page_view
+"GET /products/9/add_review/? HTTP/1.1" 200 3994
+VIEW: add_review_page_view
+"POST /products/9/add_review/? HTTP/1.1" 302 0
+"GET /products/9/ HTTP/1.1" 200 4194
+VIEW: reviews_page_view
+"GET /reviews/? HTTP/1.1" 200 3679
+"GET /admin/store/vacancy/ HTTP/1.1" 200 13712
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/user/ HTTP/1.1" 200 17669
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/typeofproduct/ HTTP/1.1" 200 13465
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/term/ HTTP/1.1" 200 13588
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/review/ HTTP/1.1" 200 13068
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/promocode/ HTTP/1.1" 200 12842
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/ HTTP/1.1" 200 17375
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/pickuppoint/ HTTP/1.1" 200 13126
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 13188
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/2/change/ HTTP/1.1" 200 18912
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 13188
+"GET /orders/? HTTP/1.1" 200 3610
+"GET /orders/create/? HTTP/1.1" 200 6462
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 3674
+"GET /orders/create/? HTTP/1.1" 200 6462
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 3743
+"GET /orders/create/? HTTP/1.1" 200 6462
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 3809
+"GET /admin/store/order/ HTTP/1.1" 200 14101
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /orders/create/? HTTP/1.1" 200 6462
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 3876
+"GET /orders/ HTTP/1.1" 200 3876
+"GET /admin/store/order/ HTTP/1.1" 200 14406
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /orders/create/? HTTP/1.1" 200 6462
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 3940
+"GET /admin/store/order/ HTTP/1.1" 200 14707
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /orders/create/? HTTP/1.1" 200 6462
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 4006
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /orders/create/? HTTP/1.1" 200 6462
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"POST /orders/create/? HTTP/1.1" 200 6561
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/1/change/ HTTP/1.1" 200 18867
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/store/order/2/change/ HTTP/1.1" 200 18912
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/store/order/3/change/ HTTP/1.1" 200 18964
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/store/order/4/change/ HTTP/1.1" 200 18909
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/store/order/5/change/ HTTP/1.1" 200 18924
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /orders/create/? HTTP/1.1" 200 6561
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/store/order/9/change/ HTTP/1.1" 200 18913
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/store/order/8/change/ HTTP/1.1" 200 18909
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"GET /admin/store/order/7/change/ HTTP/1.1" 200 18916
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/order/ HTTP/1.1" 200 15010
+"POST /orders/create/? HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 4074
+"GET /orders/ HTTP/1.1" 200 4074
+"GET /superuser/sales_forecast? HTTP/1.1" 200 3731
+"GET /admin/store/order/ HTTP/1.1" 200 15322
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/pickuppoint/ HTTP/1.1" 200 13126
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/product/ HTTP/1.1" 200 17375
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/promocode/ HTTP/1.1" 200 12842
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/store/review/ HTTP/1.1" 200 13068
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+VIEW: news_page_view
+"GET /news/? HTTP/1.1" 200 5819
+"GET /media/Screenshot_2024-05-10_at_09.18.21.png HTTP/1.1" 304 0
+"GET /media/Screenshot_2024-05-10_at_09.18.49.png HTTP/1.1" 304 0
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+"GET /products/? HTTP/1.1" 200 4799
+"GET /products/create/? HTTP/1.1" 200 4814
+"GET /products/2/ HTTP/1.1" 200 4186
+"GET /products/?search=Liq HTTP/1.1" 200 4113
+"GET /products/5/ HTTP/1.1" 200 4208
+"GET /products/?search=a HTTP/1.1" 200 4586
+"GET /products/5/ HTTP/1.1" 200 4208
+"GET /products/5/update/? HTTP/1.1" 200 4867
+"POST /products/5/update/? HTTP/1.1" 302 0
+"GET /products/ HTTP/1.1" 200 4798
+"GET /products/5/ HTTP/1.1" 200 4207
+VIEW: add_review_page_view
+"GET /products/5/add_review/? HTTP/1.1" 200 3999
+VIEW: add_review_page_view
+"POST /products/5/add_review/? HTTP/1.1" 302 0
+"GET /products/5/ HTTP/1.1" 200 4207
+VIEW: reviews_page_view
+"GET /reviews/? HTTP/1.1" 200 3825
+"GET /register/? HTTP/1.1" 200 5595
+"GET /products/? HTTP/1.1" 200 4798
+"GET /profile/? HTTP/1.1" 200 3593
+"GET /superuser/sales_forecast? HTTP/1.1" 200 3731
+"GET /superuser/plot_statistics? HTTP/1.1" 200 43765
+Not Found: /regsiter
+"GET /regsiter HTTP/1.1" 404 9242
+"GET /register/ HTTP/1.1" 200 5595
+"GET /register/ HTTP/1.1" 200 5595
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/src/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /regggg
+"GET /regggg HTTP/1.1" 404 179
+/Users/mac/Desktop/253505_KASIAKOU_10/IGI/LR5/src/settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /register/ HTTP/1.1" 200 5595
+"POST /register/ HTTP/1.1" 302 0
+"GET /profile/ HTTP/1.1" 200 3609
+"GET /superuser/sales_forecast? HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 3683
+"GET /superuser/plot_statistics? HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 3683
+"GET /superuser/annual_sales? HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 3683
+"GET /superuser/sales_forecast? HTTP/1.1" 302 0
+VIEW: about_page_view
+"GET /about/ HTTP/1.1" 200 3683
+"GET /clients/? HTTP/1.1" 200 4253
+"GET /clients/3/ HTTP/1.1" 200 3862
+"GET /clients/4/ HTTP/1.1" 200 3856
+VIEW: pickuppoint_page_view
+"GET /pickuppoints/? HTTP/1.1" 200 3495
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: about_page_view
+VIEW: contacts_page_view
+VIEW: home_page_view
+VIEW: news_page_view
+VIEW: privacy_policy_page_view
+VIEW: promocodes_page_view
+VIEW: terms_page_view
+VIEW: vacancies_page_view
+Watching for file changes with StatReloader
+VIEW: home_page_view
+"GET / HTTP/1.1" 200 4125
+"GET /media/Screenshot_2024-05-10_at_09.19.09.png HTTP/1.1" 304 0
+"GET /profile/? HTTP/1.1" 200 3609

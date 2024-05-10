@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Manufacturer Detail{% endblock title %}
+{% block content%}
+    <h1>Manufacturer Detail</h1>
+    <p>Name: {{ manufacturer.name }}</p>
+    <p>Location: {{ manufacturer.location }}</p>
+
+    <form action="{% url 'manufacturer_update' manufacturer.pk %}" method="get" style="display: inline;">
+        <button type="submit">Update</button>
+    </form>
+
+    <form action="{% url 'manufacturer_delete' manufacturer.pk %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock content %}

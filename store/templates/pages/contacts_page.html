@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Contacts{% endblock title %}
+{% block content%}
+    <h1>Contacts</h1>
+    <ul>
+        {% for contact in contacts %}
+        <li>
+            <h2>{{ contact.employee.name }}</h2>
+            <p>{{ contact.description }}</p>
+            {% if contact.photo %}
+            <img src="{{ contact.photo.url }}" alt="{{ contact.employee.name }} Photo">
+            {% endif %}
+            {% if contact.employee.phone_number %}
+            <p>Phone: {{ contact.employee.phone_number }}</p>
+            {% endif %}
+            <p>Email: {{ contact.employee.email }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Promo Codes{% endblock title %}
+{% block content%}
+    <h1>Promo Codes</h1>
+    <ul>
+        {% for promocode in promocodes %}
+        <li>
+            <h2>{{ promocode.code }} - {{ promocode.percentage }}%</h2>
+            {% if promocode.is_active %}
+            <h3>- Is active now</h3>
+            {% else %}
+            <h3>- Is not active now</h3>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <form action="{% url 'home' %}" style="display: inline;">
+        <button type="submit">Home</button>
+    </form>
+    <form action="{% url 'about' %}" style="display: inline;">
+        <button type="submit">About</button>
+    </form>
+    <form action="{% url 'news' %}" style="display: inline;">
+        <button type="submit">News</button>
+    </form>
+    <form action="{% url 'terms' %}" style="display: inline;">
+        <button type="submit">Terms</button>
+    </form>
+    <form action="{% url 'contacts' %}" style="display: inline;">
+        <button type="submit">Contacts</button>
+    </form>
+    <form action="{% url 'privacy_policy' %}" style="display: inline;">
+        <button type="submit">Privacy Policy</button>
+    </form>
+    <form action="{% url 'vacancies' %}" style="display: inline;">
+        <button type="submit">Vacancies</button>
+    </form>
+    <form action="{% url 'reviews' %}" style="display: inline;">
+        <button type="submit">Reviews</button>
+    </form>
+    <form action="{% url 'promocodes' %}" style="display: inline;">
+        <button type="submit">Promocodes</button>
+    </form>
+    <form action="{% url 'pickuppoints' %}" style="display: inline;">
+        <button type="submit">Pick Up Points (for clients)</button>
+    </form>
+    <form action="{% url 'employee_list' %}" style="display: inline;">
+        <button type="submit">Employees</button>
+    </form>
+    <form action="{% url 'manufacturer_list' %}" style="display: inline;">
+        <button type="submit">Manufacturers</button>
+    </form>
+    <form action="{% url 'product_list' %}" style="display: inline;">
+        <button type="submit">Products</button>
+    </form>
+    <form action="{% url 'client_list' %}" style="display: inline;">
+        <button type="submit">Clients</button>
+    </form>
+    <form action="{% url 'order_list' %}" style="display: inline;">
+        <button type="submit">Orders (for employees)</button>
+    </form>
+    <form action="{% url 'order_create' %}" style="display: inline;">
+        <button type="submit">Create order</button>
+    </form>
+    <form action="{% url 'login' %}" style="display: inline;">
+        <button type="submit">Login</button>
+    </form>
+    <form action="{% url 'logout' %}" style="display: inline;">
+        <button type="submit">Logout</button>
+    </form>
+    <form action="{% url 'register' %}" style="display: inline;">
+        <button type="submit">Register</button>
+    </form>
+    <form action="{% url 'profile' %}" style="display: inline;">
+        <button type="submit">Profile</button>
+    </form>
+    <form action="{% url 'demand' %}" style="display: inline;">
+        <button type="submit">Demand (for superuser)</button>
+    </form>
+    <form action="{% url 'monthly_sales' %}" style="display: inline;">
+        <button type="submit">Monthly Sales (for superuser)</button>
+    </form>
+    <form action="{% url 'annual_sales' %}" style="display: inline;">
+        <button type="submit">Annual Sales (for superuser)</button>
+    </form>
+    <form action="{% url 'plot_statistics' %}" style="display: inline;">
+        <button type="submit">Plot Statistics (for superuser)</button>
+    </form>
+    <form action="{% url 'sales_forecast' %}" style="display: inline;">
+        <button type="submit">Sales Forecast (for superuser)</button>
+    </form>
+    <div>{% block content%}{% endblock content %}</div>
+</body>
+</html>

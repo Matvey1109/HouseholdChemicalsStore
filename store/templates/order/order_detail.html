@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Order Detail{% endblock title %}
+{% block content%}
+    <h1>Order Detail</h1>
+    <p>Employee: {{ order.employee }}</p>
+    <p>Products:</p>
+    {% for product in order.products.all %}
+    <li>{{ product.name }}</li>
+    {% endfor %}
+    <p>Client: {{ order.client }}</p>
+    <p>Date ordered: {{ order.date_ordered }}</p>
+    <p>Total price: ${{ order.total_price }}</p>
+    <p>Products quantities: {{ order.product_quantities }}</p>
+
+    <form action="{% url 'order_update' order.pk %}" method="get" style="display: inline;">
+        <button type="submit">Update</button>
+    </form>
+
+    <form action="{% url 'order_delete' order.pk %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Pick Up Points{% endblock title %}
+{% block content%}
+    <h2>Pick Up Points</h2>
+    <ul>
+        {% for pickuppoint in pickuppoints %}
+        <li>
+            <p>Address: {{ pickuppoint.address }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

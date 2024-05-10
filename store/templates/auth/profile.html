@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock title %}
+{% block content%}
+    <h1>Profile</h1>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    {% if user.is_client %}
+        <p>User type: Client</p>
+    {% elif user.is_employee %}
+        <p>User type: Employee</p>
+    {% else %}
+        <p>User type: Unknown</p>
+    {% endif %}
+    <p>User timezone: {{ user_time_data.user_timezone }}</p>
+    <p>Current formatted date: {{ user_time_data.current_date_formatted }}</p>
+    <p>Calendar:</p>
+    <pre>{{ user_time_data.calendar_text }}</pre>
+{% endblock content %}

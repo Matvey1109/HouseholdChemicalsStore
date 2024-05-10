@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Type of Product Detail{% endblock title %}
+{% block content%}
+    <h1>Type of Product Detail</h1>
+    <p>Name: {{ type_of_product.name }}</p>
+
+    <form action="{% url 'type_of_product_update' type_of_product.pk %}" method="get" style="display: inline;">
+        <button type="submit">Update</button>
+    </form>
+
+    <form action="{% url 'type_of_product_delete' type_of_product.pk %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock content %}

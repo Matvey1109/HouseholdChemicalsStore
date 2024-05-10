@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Delete Order{% endblock title %}
+{% block content%}
+    <h1>Delete Order</h1>
+    <p>Are you sure you want to delete {{ order.client.name }} - ${{ order.total_price }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+{% endblock content %}

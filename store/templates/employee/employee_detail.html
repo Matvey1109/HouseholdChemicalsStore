@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Employee Detail{% endblock title %}
+{% block content%}
+    <h1>Employee Detail</h1>
+    <p>Name: {{ employee.name }}</p>
+    <p>Email: {{ employee.email }}</p>
+    <p>Phone number: {{ cliemployeeent.phone_number }}</p>
+    <p>Age: {{ employee.age }}</p>
+
+    <form action="{% url 'employee_update' employee.pk %}" method="get" style="display: inline;">
+        <button type="submit">Update</button>
+    </form>
+
+    <form action="{% url 'employee_delete' employee.pk %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock content %}

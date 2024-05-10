@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Sales Forecast{% endblock title %}
+{% block content%}
+    <h1>Sales Forecast</h1>
+
+    <h2>Date Range</h2>
+    <p>Start Date: {{ start_date }}</p>
+    <p>End Date: {{ end_date }}</p>
+
+    <h2>Total Sales</h2>
+    <p>Total Sales: ${{ total_sales }}</p>
+
+    <h2>Average Daily Sales</h2>
+    <p>Average Daily Sales: ${{ average_daily_sales }}</p>
+
+    <h2>Projected Sales</h2>
+    <p>Projected Sales: ${{ projected_sales }}</p>
+
+    <h2>Statistical Indicators</h2>
+    <p>Mean Sales: ${{ sales_mean }}</p>
+    <p>Mode Sales: ${{ sales_mode }}</p>
+    <p>Median Sales: ${{ sales_median }}</p>
+{% endblock content %}

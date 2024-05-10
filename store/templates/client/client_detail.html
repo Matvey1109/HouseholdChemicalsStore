@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Client Detail{% endblock title %}
+{% block content%}
+    <h1>Client Detail</h1>
+    <p>Name: {{ client.name }}</p>
+    <p>Email: {{ client.email }}</p>
+    <p>Phone number: {{ client.phone_number }}</p>
+    <p>Age: {{ client.age }}</p>
+    <p>* Potential gender: {{ client_gender }}</p>
+    <p>* Potential nationality: {{ client_nationality }}</p>
+
+    <form action="{% url 'client_update' client.pk %}" method="get" style="display: inline;">
+        <button type="submit">Update</button>
+    </form>
+
+    <form action="{% url 'client_delete' client.pk %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock content %}

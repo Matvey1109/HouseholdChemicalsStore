@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Product List{% endblock title %}
+{% block content%}
+    <h1>Product List</h1>
+    <form action="{% url 'product_list' %}" method="get" style="margin-bottom: 10px;">
+        <label for="search">Search by Name:</label>
+        <input type="text" id="search" name="search">
+        <button type="submit">Search</button>
+    </form>
+    <form action="{% url 'product_list' %}" method="get" style="margin-bottom: 10px;">
+        <label for="sort">Sort by Price:</label>
+        <select id="sort" name="sort">
+            <option value="ascending">Low to High</option>
+            <option value="descending">High to Low</option>
+        </select>
+        <button type="submit">Sort</button>
+    </form>
+    <h2>Products</h2>
+    <ul>
+        {% for product in products %}
+        <li><a href="{% url 'product_detail' product.pk %}">{{ product.name }} - ${{ product.price }}</a></li>
+        {% endfor %}
+    </ul>
+    <form action="{% url 'product_create' %}" method="get" style="display: inline;">
+        <button type="submit">Create</button>
+    </form>
+{% endblock content %}

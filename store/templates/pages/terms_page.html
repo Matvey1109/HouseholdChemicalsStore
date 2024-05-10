@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Terms{% endblock title %}
+{% block content%}
+    <h2>Terms list</h2>
+    <ul>
+        {% for term in terms %}
+        <li>
+            <p>Question: {{ term.question }}</p>
+            <p>Answer: {{ term.answer }}</p>
+            <p>Date added: {{ term.date_added }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Monthly Sales Volume{% endblock title %}
+{% block content%}
+    <h1>Monthly Sales Volume</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                {% for column in pivot_table.columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in pivot_table.iterrows %}
+                <tr>
+                    <th>{{ index }}</th>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

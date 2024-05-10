@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{% if form.instance.pk %}Update Order{% else %}Create Order{% endif %}{% endblock title %}
+{% block content%}
+    <h1>{% if form.instance.pk %}Update Order{% else %}Create Order{% endif %}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <h2>Products</h2>
+        {% for product in all_products %}
+        <div>
+            <input type="checkbox" name="products" value="{{ product.pk }}"> {{ product.name }} ({{ product.price }})
+            <input type="number" name="quantity_{{ product.pk }}" min="0">
+        </div>
+        {% endfor %}
+        <input type="submit" value="Save">
+    </form>
+{% endblock content %}

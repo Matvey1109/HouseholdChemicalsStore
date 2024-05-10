@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Employee List{% endblock title %}
+{% block content%}
+    <h1>Employee List</h1>
+    <ul>
+        {% for employee in employees %}
+        <li><a href="{% url 'employee_detail' employee.pk %}">{{ employee.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <form action="{% url 'employee_create' %}" method="get" style="display: inline;">
+        <button type="submit">Create</button>
+    </form>
+{% endblock content %}
