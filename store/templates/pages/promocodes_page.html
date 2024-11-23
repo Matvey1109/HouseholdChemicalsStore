@@ -7,11 +7,48 @@
         <li>
             <h2>{{ promocode.code }} - {{ promocode.percentage }}%</h2>
             {% if promocode.is_active %}
-            <h3>- Is active now</h3>
+            <h3 class="active">- Is active now</h3>
             {% else %}
-            <h3>- Is not active now</h3>
+            <h3 class="inactive">- Is not active now</h3>
             {% endif %}
         </li>
         {% endfor %}
     </ul>
+
+    <style>
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        h3 {
+            margin: 5px 0;
+            color: #888;
+        }
+
+        .active {
+            color: green;
+        }
+
+        .inactive {
+            color: red;
+        }
+    </style>
 {% endblock content %}

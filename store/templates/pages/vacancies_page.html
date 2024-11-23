@@ -10,4 +10,46 @@
         </li>
         {% endfor %}
     </ul>
+
+    <!-- Вакансии: список вакансий с описанием – использовать плавающие блоки (float, clear ) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            float: center;
+            width: 45%;
+        }
+
+        li:nth-child(odd) {
+            clear: both;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
 {% endblock content %}

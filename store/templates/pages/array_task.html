@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Student Manager{% endblock title %}
+{% block content%}
+    <h2>Add a Student</h2>
+    <form id="studentForm">
+        <label>First Name: <input style="width: 200px;" type="text" id="firstName" required></label><br>
+        <label>Last Name: <input style="width: 200px;" type="text" id="lastName" required></label><br>
+        <label>Patronymic: <input style="width: 200px;" type="text" id="patronymic" required></label><br>
+        <label>Gender:
+            <select id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </label><br>
+        <label>Age: <input style="width: 100px;" type="number" id="age" min="16" max="35" required></label><br>
+        <label>Year: <input style="width: 100px;" type="number" id="year" min="1" max="5" required></label><br>
+        <button type="button" onclick="manager.addStudentFromForm()">Add Student</button>
+    </form>
+
+    <!-- Display area for students -->
+    <h2>Student List</h2>
+    <div id="studentList"></div>
+
+    <!-- Display area for result -->
+    <h2>Result</h2>
+    <div id="result"></div>
+
+    <!-- Разработайте скрипты, реализующие алгоритм решения задачи с использованием базового класса (параметры базового класса определить самим) и класса наследника (добавляются параметры, отсутствующие в базовом классе -->
+    <script src="{% static 'js/array_task_1.js' %}"></script>
+{% endblock content %}

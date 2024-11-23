@@ -1,11 +1,347 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Home{% endblock title %}
 {% block content%}
-    <h1>Welcome to household chemical store!</h1>
-    <h2>Latest added article:</h2>
-    <p>Title: {{ latest_article.title }}</p>
-    <p>Content: {{ latest_article.content }}</p>
-    <p>Image:</p>
-    <img src="{{ latest_article.image.url }}" alt="latest_article.title" height="500" width="500">
-    <p>Published Date: {{ latest_article.published_date }}</p>
+    <h1 style="text-align: center;">Welcome!!!</h1>
+    <h2 style="text-align: center;">Animation!</h2>
+    <style>
+        /* Container for the animation */
+        .animation-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-color: #d3d3d3;
+            overflow: hidden;
+        }
+
+        /* Dirty surface */
+        .dirty-surface {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #7d7d7d;
+            transition: opacity 2s ease-in-out;
+        }
+
+        /* Main bottle */
+        .cleaner {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            top: 0;
+            left: -60px;
+            transform-origin: bottom right;
+            animation: move-in 2s 1s forwards, tilt 1s 3s forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        /* Cleaner splash */
+        .cleaner-splash {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #c2e7da;
+            border-radius: 50%;
+            top: 50%;
+            left: 21%;
+            opacity: 0;
+            animation: splash 2s 3.5s forwards;
+            z-index: 2;
+        }
+
+        /* Sponge wipe */
+        .sponge {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: -300px;
+            opacity: 0.8;
+            animation: wipe 3s 4.5s forwards;
+            z-index: 5;
+        }
+
+        /* Clean surface reveal */
+        .clean-surface {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #cce7dd;
+            opacity: 0;
+            animation: reveal 1s 6.5s forwards;
+            z-index: 4;
+        }
+
+        /* Company name */
+        .company-name {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 40%;
+            font-size: 2em;
+            font-weight: bold;
+            color: #4b9c68;
+            opacity: 0;
+            animation: appear 1s 7s forwards;
+        }
+
+        /* Animations */
+        @keyframes move-in {
+            to {
+                left: 10%;
+            }
+        }
+
+        @keyframes tilt {
+            to {
+                transform: rotate(+80deg);
+            }
+        }
+
+        @keyframes splash {
+            to {
+                opacity: 1;
+                transform: scale(5);
+            }
+        }
+
+        @keyframes wipe {
+            to {
+                left: 120%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes appear {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <div class="animation-container">
+        <div class="dirty-surface"></div>
+        <img class="cleaner" src="{% static 'img/cleaner.png' %}" alt="">
+        <div class="cleaner-splash"></div>
+        <div class="sponge"><img class="sponge" src="{% static 'img/sponge.png' %}" alt=""></div>
+        <div class="clean-surface"></div>
+        <div class="company-name">Household Chemical Store!</div>
+    </div>
+
+    <div id="latest-article" class="latest-article">
+        <h2>Latest Added Article:</h2>
+        <p>Title: {{ latest_article.title }}</p>
+        <p>Content: {{ latest_article.content }}</p>
+        <p>Image:</p>
+        <img src="{{ latest_article.image.url }}" alt="{{ latest_article.title }}" height="500" width="500">
+        <p>Published Date: {{ latest_article.published_date }}</p>
+    </div>
+
+    <img src="{% static 'img/favicon.ico' %}" alt="Company Logo">
+
+    <h2>Company Advertisement</h2>
+    <div class="advertisement-banners">
+        <img src="{% static 'img/banner1.jpeg' %}" alt="Banner 1" height="200" width="400">
+        <img src="{% static 'img/banner2.jpeg' %}" alt="Banner 2" height="200" width="400">
+    </div>
+
+    <h2 id="catalog">Catalog of Products</h2>
+    <form action="{% url 'product_list' %}" style="display: inline;">
+        <button type="submit">Products</button>
+    </form>
+
+    <h2 id="partners">Partner Companies</h2>
+    <div class="partner-companies">
+        <ul>
+            <li>
+                <a href="https://www.youtube.com" class="partner">
+                    <h4>YouTube</h4>
+                    <img src="{% static 'img/youtube_logo.png' %}" alt="YouTube Logo">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com" class="partner">
+                    <h4>Instagram</h4>
+                    <img src="{% static 'img/instagram_logo.png' %}" alt="Instagram Logo">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <h2 style="text-align: center;">Preloader!</h2>
+    <style>
+        .preloader-wrapper {
+            min-height: 50hv;
+            background-color: #37474f;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .spinner-box {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .solar-system {
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .orbit {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ffffffa5;
+            border-radius: 50%;
+        }
+
+        .earth-orbit {
+            width: 165px;
+            height: 165px;
+            animation: spin 12s linear 0s infinite;
+        }
+
+        .venus-orbit {
+            width: 120px;
+            height: 120px;
+            animation: spin 7.4s linear 0s infinite;
+        }
+
+        .mercury-orbit {
+            width: 90px;
+            height: 90px;
+            animation: spin 6s linear 0s infinite;
+        }
+
+        .planet {
+            position: absolute;
+            top: -5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #3ff9dc;
+        }
+
+        .sun {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #ffab91;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(359deg);
+            }
+        }
+    </style>
+    <div class="preloader-wrapper">
+        <div class="spinner-box">
+            <div class="solar-system">
+                <div class="earth-orbit orbit">
+                    <div class="planet earth"></div>
+                    <div class="venus-orbit orbit">
+                        <div class="planet venus"></div>
+                        <div class="mercury-orbit orbit">
+                            <div class="planet mercury"></div>
+                            <div class="sun"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="name-of-company">
+        <h2>Household Chemical Store</h2>
+    </div>
+
+    <!-- На Главной странице для списка компаний партнеров использовать блоки круглой формы, настроить для них ширину, цвет, тип и тень.
+    Настроить шрифт и кернинг для наименования компании
+    Для отображения инфо о последней статье использовать позиционирование (position) -->
+    <style>
+        .name-of-company {
+            font-kerning: auto;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .latest-article {
+            position: relative;
+            margin-top: 60px;
+            /* Add space for fixed navigation */
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-companies {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .partner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s;
+        }
+
+        .partner:hover {
+            transform: scale(1.05);
+        }
+
+        .partner img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .partner h4 {
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
 {% endblock content %}

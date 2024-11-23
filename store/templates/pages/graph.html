@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block title %}Series Expansion Graph with Animation{% endblock title %}
+{% block content%}
+    <style>
+        body {
+            background-color: white;
+            height: 80vh;
+        }
+    </style>
+
+    <!-- Include chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <h2>Graph of the Function and Series Expansion with Animation</h2>
+    <canvas id="myChart" width="800" height="400"></canvas>
+
+    <script>
+        // Function to calculate the partial sum of the series up to n terms
+        function seriesExpansion(x, n) {
+            let sum = 0;
+            for (let i = 0; i <= n; i++) {
+                sum += Math.pow(x, i);
+            }
+            return sum;
+        }
+
+        function mathFunction(x) {
+            return 1 / (1 - x);
+        }
+
+        // Generate data for x values from -0.9 to 0.9 in increments of 0.1
+        const xValues = [];
+        for (let x = -0.9; x <= 0.9; x += 0.1) {
+            xValues.push(parseFloat(x.toFixed(1))); // limit decimal places for clarity
+        }
+
+        // Calculate series expansion values for different partial sums
+        const seriesData = {
+            'n=1': xValues.map(x => seriesExpansion(x, 1)),
+            'n=2': xValues.map(x => seriesExpansion(x, 2)),
+            'n=5': xValues.map(x => seriesExpansion(x, 5)),
+            'n=10': xValues.map(x => seriesExpansion(x, 10))
+        };
+
+        // Calculate the actual function values
+        const mathData = xValues.map(x => mathFunction(x));
+
+        // Create chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: xValues,
+                datasets: [
+                    {
+                        label: 'Math F(x) = 1/(1 - x)',
+                        data: mathData,
+                        borderColor: 'black',
+                        borderWidth: 2,
+                        fill: false
+                    },
+                    {
+                        label: 'Series F(x), n=1',
+                        data: seriesData['n=1'],
+                        borderColor: 'red',
+                        borderWidth: 1,
+                        fill: false,
+                        borderDash: [5, 5]
+                    },
+                    {
+                        label: 'Series F(x), n=2',
+                        data: seriesData['n=2'],
+                        borderColor: 'blue',
+                        borderWidth: 1,
+                        fill: false,
+                        borderDash: [5, 5]
+                    },
+                    {
+                        label: 'Series F(x), n=5',
+                        data: seriesData['n=5'],
+                        borderColor: 'green',
+                        borderWidth: 1,
+                        fill: false,
+                        borderDash: [5, 5]
+                    },
+                    {
+                        label: 'Series F(x), n=10',
+                        data: seriesData['n=10'],
+                        borderColor: 'purple',
+                        borderWidth: 1,
+                        fill: false,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Comparison of Function and Series Expansion with Animation'
+                    },
+                    annotation: {
+                        annotations: {
+                            point: {
+                                type: 'point',
+                                xValue: 0,
+                                yValue: 1,
+                                backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                                radius: 5,
+                                label: {
+                                    enabled: true,
+                                    content: 'Intersection at (0, 1)',
+                                    position: 'end'
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'x'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'F(x)'
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1500, // Animation duration in milliseconds
+                    easing: 'easeOutQuart' // Easing function for the animation
+                }
+            }
+        });
+    </script>
+{% endblock content %}

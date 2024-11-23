@@ -1,9 +1,16 @@
 from django.urls import path, re_path
 from django.contrib.auth import views as login_views
 from .views.pages_views import (
+    array_task_view,
+    checkbox_view,
+    grapg_view,
     home_page_view,
     about_page_view,
+    news_detail_page_view,
     news_page_view,
+    scrolling_view,
+    slider_settings_view,
+    slider_view,
     terms_page_view,
     contacts_page_view,
     privacy_policy_page_view,
@@ -12,6 +19,8 @@ from .views.pages_views import (
     add_review_page_view,
     promocodes_page_view,
     pickuppoints_page_view,
+    cart_page_view,
+    payment_page_view,
 )
 from .views.employee_views import (
     employee_list,
@@ -68,6 +77,7 @@ pages_urls = [
     re_path(r"^$", home_page_view, name="home"),
     path("about/", about_page_view, name="about"),
     path("news/", news_page_view, name="news"),
+    path("news_detail/<int:pk>/", news_detail_page_view, name="news_detail"),
     path("terms/", terms_page_view, name="terms"),
     path("contacts/", contacts_page_view, name="contacts"),
     path("privacy_policy/", privacy_policy_page_view, name="privacy_policy"),
@@ -79,6 +89,14 @@ pages_urls = [
     ),
     path("promocodes/", promocodes_page_view, name="promocodes"),
     path("pickuppoints/", pickuppoints_page_view, name="pickuppoints"),
+    path("cart/", cart_page_view, name="cart"),
+    path("payment/", payment_page_view, name="payment"),
+    path("slider/", slider_view, name="slider"),
+    path("slider/settings/", slider_settings_view, name="slider_settings"),
+    path("checkbox/", checkbox_view, name="checkbox"),
+    path("scrolling/", scrolling_view, name="scrolling"),
+    path("array_task/", array_task_view, name="array_task"),
+    path("graph/", grapg_view, name="graph"),
 ]
 
 employee_urls = [

@@ -1,7 +1,6 @@
 from django import forms
-from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-from .models import User, Employee, Manufacturer, TypeOfProduct, Product, Client, Order
+from .models import SliderSettings, User, Employee, Manufacturer, TypeOfProduct, Product, Client, Order
 
 
 class EmployeeForm(forms.ModelForm):
@@ -80,3 +79,9 @@ class RegistrationForm(UserCreationForm):
             )
 
         return user
+
+
+class SliderSettingsForm(forms.ModelForm):
+    class Meta:
+        model = SliderSettings
+        fields = ["loop", "navs", "pags", "auto", "delay", "stopMouseHover"]

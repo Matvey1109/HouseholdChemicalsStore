@@ -157,3 +157,28 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Order #{self.pk} - {self.client.name} - {self.date_ordered}"
+
+
+class Partner(models.Model):
+    name = models.CharField(max_length=100)
+
+
+class Slider(models.Model):
+    image = models.ImageField(upload_to="slider_images/")
+    caption = models.CharField(max_length=255)
+    link = models.URLField()
+
+    def __str__(self):
+        return self.caption
+
+
+class SliderSettings(models.Model):
+    loop = models.BooleanField(default=True)
+    navs = models.BooleanField(default=True)
+    pags = models.BooleanField(default=True)
+    auto = models.BooleanField(default=True)
+    delay = models.IntegerField(default=5)  # in seconds
+    stopMouseHover = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"Settings (auto: {self.auto}, delay: {self.delay}s)"

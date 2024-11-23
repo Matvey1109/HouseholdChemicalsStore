@@ -1,85 +1,158 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
+    <!-- метаданные -->
+    <meta name="store" content="store">
+
     <title>{% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <form action="{% url 'home' %}" style="display: inline;">
-        <button type="submit">Home</button>
-    </form>
-    <form action="{% url 'about' %}" style="display: inline;">
-        <button type="submit">About</button>
-    </form>
-    <form action="{% url 'news' %}" style="display: inline;">
-        <button type="submit">News</button>
-    </form>
-    <form action="{% url 'terms' %}" style="display: inline;">
-        <button type="submit">Terms</button>
-    </form>
-    <form action="{% url 'contacts' %}" style="display: inline;">
-        <button type="submit">Contacts</button>
-    </form>
-    <form action="{% url 'privacy_policy' %}" style="display: inline;">
-        <button type="submit">Privacy Policy</button>
-    </form>
-    <form action="{% url 'vacancies' %}" style="display: inline;">
-        <button type="submit">Vacancies</button>
-    </form>
-    <form action="{% url 'reviews' %}" style="display: inline;">
-        <button type="submit">Reviews</button>
-    </form>
-    <form action="{% url 'promocodes' %}" style="display: inline;">
-        <button type="submit">Promocodes</button>
-    </form>
-    <form action="{% url 'pickuppoints' %}" style="display: inline;">
-        <button type="submit">Pick Up Points (for clients)</button>
-    </form>
-    <form action="{% url 'employee_list' %}" style="display: inline;">
-        <button type="submit">Employees</button>
-    </form>
-    <form action="{% url 'manufacturer_list' %}" style="display: inline;">
-        <button type="submit">Manufacturers</button>
-    </form>
-    <form action="{% url 'product_list' %}" style="display: inline;">
-        <button type="submit">Products</button>
-    </form>
-    <form action="{% url 'client_list' %}" style="display: inline;">
-        <button type="submit">Clients</button>
-    </form>
-    <form action="{% url 'order_list' %}" style="display: inline;">
-        <button type="submit">Orders (for employees)</button>
-    </form>
-    <form action="{% url 'order_create' %}" style="display: inline;">
-        <button type="submit">Create order</button>
-    </form>
-    <form action="{% url 'login' %}" style="display: inline;">
-        <button type="submit">Login</button>
-    </form>
-    <form action="{% url 'logout' %}" style="display: inline;">
-        <button type="submit">Logout</button>
-    </form>
-    <form action="{% url 'register' %}" style="display: inline;">
-        <button type="submit">Register</button>
-    </form>
-    <form action="{% url 'profile' %}" style="display: inline;">
-        <button type="submit">Profile</button>
-    </form>
-    <form action="{% url 'demand' %}" style="display: inline;">
-        <button type="submit">Demand (for superuser)</button>
-    </form>
-    <form action="{% url 'monthly_sales' %}" style="display: inline;">
-        <button type="submit">Monthly Sales (for superuser)</button>
-    </form>
-    <form action="{% url 'annual_sales' %}" style="display: inline;">
-        <button type="submit">Annual Sales (for superuser)</button>
-    </form>
-    <form action="{% url 'plot_statistics' %}" style="display: inline;">
-        <button type="submit">Plot Statistics (for superuser)</button>
-    </form>
-    <form action="{% url 'sales_forecast' %}" style="display: inline;">
-        <button type="submit">Sales Forecast (for superuser)</button>
-    </form>
-    <div>{% block content%}{% endblock content %}</div>
+    <div class="navbar">
+        <form action="{% url 'home' %}" style="display: inline;">
+            <button type="submit">Home</button>
+        </form>
+        <form action="{% url 'about' %}" style="display: inline;">
+            <button type="submit">About</button>
+        </form>
+        <form action="{% url 'news' %}" style="display: inline;">
+            <button type="submit">News</button>
+        </form>
+        <form action="{% url 'terms' %}" style="display: inline;">
+            <button type="submit">Terms</button>
+        </form>
+        <form action="{% url 'contacts' %}" style="display: inline;">
+            <button type="submit">Contacts</button>
+        </form>
+        <form action="{% url 'privacy_policy' %}" style="display: inline;">
+            <button type="submit">Privacy Policy</button>
+        </form>
+        <form action="{% url 'vacancies' %}" style="display: inline;">
+            <button type="submit">Vacancies</button>
+        </form>
+        <form action="{% url 'reviews' %}" style="display: inline;">
+            <button type="submit">Reviews</button>
+        </form>
+        <form action="{% url 'promocodes' %}" style="display: inline;">
+            <button type="submit">Promocodes</button>
+        </form>
+        <form action="{% url 'pickuppoints' %}" style="display: inline;">
+            <button type="submit">Pick Up Points (for clients)</button>
+        </form>
+        <form action="{% url 'employee_list' %}" style="display: inline;">
+            <button type="submit">Employees</button>
+        </form>
+        <form action="{% url 'manufacturer_list' %}" style="display: inline;">
+            <button type="submit">Manufacturers</button>
+        </form>
+        <form action="{% url 'product_list' %}" style="display: inline;">
+            <button type="submit">Products</button>
+        </form>
+        <form action="{% url 'client_list' %}" style="display: inline;">
+            <button type="submit">Clients</button>
+        </form>
+        <form action="{% url 'order_list' %}" style="display: inline;">
+            <button type="submit">Orders (for employees)</button>
+        </form>
+        <form action="{% url 'order_create' %}" style="display: inline;">
+            <button type="submit">Create order</button>
+        </form>
+        <form action="{% url 'login' %}" style="display: inline;">
+            <button type="submit">Login</button>
+        </form>
+        <form action="{% url 'logout' %}" style="display: inline;">
+            <button type="submit">Logout</button>
+        </form>
+        <form action="{% url 'register' %}" style="display: inline;">
+            <button type="submit">Register</button>
+        </form>
+        <form action="{% url 'profile' %}" style="display: inline;">
+            <button type="submit">Profile</button>
+        </form>
+        <form action="{% url 'demand' %}" style="display: inline;">
+            <button type="submit">Demand</button>
+        </form>
+        <form action="{% url 'monthly_sales' %}" style="display: inline;">
+            <button type="submit">Monthly Sales</button>
+        </form>
+        <form action="{% url 'annual_sales' %}" style="display: inline;">
+            <button type="submit">Annual Sales</button>
+        </form>
+        <form action="{% url 'plot_statistics' %}" style="display: inline;">
+            <button type="submit">Plot Statistics</button>
+        </form>
+        <form action="{% url 'sales_forecast' %}" style="display: inline;">
+            <button type="submit">Sales Forecast</button>
+        </form>
+        <form action="{% url 'cart' %}" style="display: inline;">
+            <button type="submit">Cart</button>
+        </form>
+        <form action="{% url 'payment' %}" style="display: inline;">
+            <button type="submit">Payment</button>
+        </form>
+        <form action="{% url 'slider' %}" style="display: inline;">
+            <button type="submit">Slider</button>
+        </form>
+        <form action="{% url 'checkbox' %}" style="display: inline;">
+            <button type="submit">Checkbox</button>
+        </form>
+        <form action="{% url 'scrolling' %}" style="display: inline;">
+            <button type="submit">Scrolling</button>
+        </form>
+        <form action="{% url 'array_task' %}" style="display: inline;">
+            <button type="submit">Array</button>
+        </form>
+        <form action="{% url 'graph' %}" style="display: inline;">
+            <button type="submit">Graph</button>
+        </form>
+    </div>
+    <div class="content">{% block content%}{% endblock content %}</div>
+
+    <!-- Область навигации по сайту (наименование страниц) должна фиксироваться при прокрутке остальной страницы. -->
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar form {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .navbar button {
+            background-color: #cce7dd;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .navbar button:hover {
+            background-color: lightgreen;
+            transform: scale(1.05);
+        }
+
+        .navbar button:active {
+            transform: scale(0.95);
+        }
+
+        .content {
+            padding-top: 60px;
+            /* Space for fixed navbar */
+        }
+    </style>
 </body>
 </html>

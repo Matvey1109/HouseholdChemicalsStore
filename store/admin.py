@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import (
+    Slider,
+    SliderSettings,
     User,
     Article,
     CompanyInfo,
@@ -28,6 +30,8 @@ admin.site.register(PromoCode)
 admin.site.register(PickUpPoint)
 admin.site.register(Employee)
 admin.site.register(TypeOfProduct)
+admin.site.register(Slider)
+admin.site.register(SliderSettings)
 
 
 @admin.register(Client)

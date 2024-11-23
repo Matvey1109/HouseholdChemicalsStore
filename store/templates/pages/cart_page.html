@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Cart{% endblock title %}
+{% block content%}
+<h1>Cart page</h1>
+
+<h2>Product 1</h2>
+<h2>Product 2</h2>
+<h2>Product 3</h2>
+
+<form action="{% url 'payment' %}" method="get" style="display: inline;">
+    <button type="submit">Pay</button>
+</form>
+
+<form action="#" method="get" style="display: inline;"></form>
+    <button type="submit">Delete from cart</button>
+</form>
+
+<form action="#" method="get" style="display: inline;"></form>
+    <button type="submit">Update quantity of products</button>
+</form>
+
+{% endblock content %}

@@ -4,10 +4,42 @@
     <h1>Reviews</h1>
     <ul>
         {% for review in reviews %}
-            <li>
-                **{{ review.user.username }}** - {{ review.product.name }}, {{ review.rating }} stars ({{ review.date_added|date:"F j, Y" }})<br>
-                {{ review.text }}
-            </li>
+        <li>
+            <strong>{{ review.user.username }}</strong> - {{ review.product.name }}, {{ review.rating }} stars<br>
+            <span>{{ review.text }}</span>
+        </li>
         {% endfor %}
     </ul>
+
+    <!-- Отзывы: Для настройки шрифтов на компонентах формы использовать ключевые слова, соответствующие типу компонента, не забыть о псевдоклассах (см. выше) -->
+    <style>
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            background-color: #f9f9f9;
+        }
+
+        li strong {
+            font-weight: bold;
+        }
+
+        li span {
+            font-style: italic;
+        }
+    </style>
 {% endblock content %}

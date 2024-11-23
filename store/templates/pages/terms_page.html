@@ -2,13 +2,66 @@
 {% block title %}Terms{% endblock title %}
 {% block content%}
     <h2>Terms list</h2>
-    <ul>
+    <ul class="terms-list">
         {% for term in terms %}
-        <li>
-            <p>Question: {{ term.question }}</p>
-            <p>Answer: {{ term.answer }}</p>
-            <p>Date added: {{ term.date_added }}</p>
+        <li class="term-item">
+            <p class="term-question">Question: {{ term.question }}</p>
+            <details class="term-answer">
+                <summary>Answer</summary>
+                <p>{{ term.answer }}</p>
+                <p class="date-added">Date added: {{ term.date_added }}</p>
+            </details>
         </li>
         {% endfor %}
     </ul>
+
+    <!-- Словарь терминов и понятий: список часто-задаваемых вопросов с датой добавления на сайт, при нажатии на которые открывается развернутый ответ – выбрать стиль самим -->
+    <style>
+        .terms-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .term-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .term-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .term-question {
+            font-weight: bold;
+        }
+
+        .term-answer summary {
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .date-added {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            .term-item {
+                padding: 5px;
+            }
+
+            .term-question {
+                font-size: 1em;
+            }
+
+            .term-answer summary {
+                font-size: 0.9em;
+            }
+        }
+    </style>
 {% endblock content %}

@@ -4,6 +4,8 @@ from django.conf import settings
 from ..models import (
     Article,
     CompanyInfo,
+    Slider,
+    SliderSettings,
     Term,
     Contact,
     Vacancy,
@@ -12,6 +14,7 @@ from ..models import (
     PickUpPoint,
     Product,
 )
+from ..forms import SliderSettingsForm
 import logging
 from ..decorators import client_required
 
@@ -40,6 +43,11 @@ def news_page_view(request):
     context = {"news": news}
     logger.log(settings.LOGGING_LEVELS["info"], "VIEW: news_page_view")
     return render(request, "pages/news_page.html", context)
+
+
+def news_detail_page_view(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    return render(request, "pages/news_detail_page.html", {"article": article})
 
 
 def terms_page_view(request):
@@ -107,3 +115,49 @@ def pickuppoints_page_view(request):
     context = {"pickuppoints": pickuppoints}
     logger.log(settings.LOGGING_LEVELS["info"], "VIEW: pickuppoint_page_view")
     return render(request, "pages/pickuppoint_page.html", context)
+
+
+def cart_page_view(request):
+    logger.log(settings.LOGGING_LEVELS["info"], "VIEW: cart_page_view")
+    return render(request, "pages/cart_page.html")
+
+
+def payment_page_view(request):
+    logger.log(settings.LOGGING_LEVELS["info"], "VIEW: payment_page_view")
+    return render(request, "pages/payment_page.html")
+
+
+def slider_view(request):
+    slides = Slider.objects.all()
+    settings = SliderSettings.objects.first()
+    return render(
+        request, "pages/slider.html", {"slides": slides, "settings": settings}
+    )
+
+
+def slider_settings_view(request):
+    settings = SliderSettings.objects.first()
+    if request.method == "POST":
+        form = SliderSettingsForm(request.POST, instance=settings)
+        if form.is_valid():
+            form.save()
+            return redirect("slider")
+    else:
+        form = SliderSettingsForm(instance=settings)
+    return render(request, "pages/slider_settings.html", {"form": form})
+
+
+def checkbox_view(request):
+    return render(request, "pages/checkbox.html")
+
+
+def scrolling_view(request):
+    return render(request, "pages/scrolling.html")
+
+
+def array_task_view(request):
+    return render(request, "pages/array_task.html")
+
+
+def grapg_view(request):
+    return render(request, "pages/graph.html")

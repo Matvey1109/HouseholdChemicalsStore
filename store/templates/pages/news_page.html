@@ -1,17 +1,61 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}News{% endblock title %}
 {% block content%}
     <h1>News page</h1>
     <h2>Article list</h2>
-    <ul>
+    <ul class="column-layout">
         {% for article in news %}
         <li>
             <p>Title: {{ article.title }}</p>
-            <p>Content: {{ article.content }}</p>
+            <p class="ellipsis">Content: {{ article.content }}</p>
             <p>Image:</p>
             <img src="{{ article.image.url }}" alt="article.title" height="500" width="500">
             <p>Published Date: {{ article.published_date }}</p>
+            <a href="{% url 'news_detail' article.pk %}" class="psevdo">View article</a>
         </li>
         {% endfor %}
     </ul>
+
+    <!-- Новости: список статей (7 статей) в соответствии с тематикой сайта с заголовком, кратким содержанием (одно предложение), картинкой и кнопкой «Читать далее» при нажатии на которую открывается вся статья –
+        использовать
+        использовать overflow для краткой информации о статье и многоточие, когда краткая информация не помещается в выделенную область.
+        многоколоночный макет для отображения текста статьи -->
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow: hidden; /* Using overflow to handle content that doesn't fit */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        /* Multi-column layout for displaying article text */
+        .column-layout {
+            column-count: 2;
+            column-gap: 30px;
+        }
+
+        /* Style for text truncation with ellipsis */
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 {% endblock content %}

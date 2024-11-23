@@ -1,0 +1,217 @@
+/* ? Селекторы */
+/* !!! about_page.html */
+/* Селектор элемента */
+p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Селектор атрибутов (начинаются с подстроки, заканчиваются подстрокой, атрибут с определенным значением) */
+[class^="history"] {
+    color: blue;
+}
+
+[class$="year"] {
+    color: red;
+}
+
+p[class="description"] {
+    background-color: lightgray;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/* Селектор классов */
+.YEAR{
+    color: aqua;
+}
+
+/* Комбинации селекторов (объединение – AND, селекторы потомков, дочерних элементов) */
+span.TEXT {
+    color: blueviolet;
+}
+
+pre span {
+    font-size: 16px;
+}
+
+pre > .WITH {
+    background-color: blue;
+}
+
+/* ? Псевдоклассы */
+/* !!! news_page.html */
+/* Не посещенная ссылка */
+a.psevdo:link {
+    color: blue;
+}
+
+/* Посещенная ссылка */
+a.psevdo:visited {
+    color: orange;
+}
+
+/* При наведении курсора */
+a.psevdo:hover {
+    color: red;
+}
+
+/* Нажатая */
+a.psevdo:active {
+    color: green;
+}
+
+/* В фокусе */
+a.psevdo:focus {
+    outline: 2px solid orange;
+}
+
+/* !!! about_page.html */
+/* Первый */
+tr.pseudo:first-child {
+    background-color: #a52d2d;
+}
+
+/* Последний */
+tr.pseudo:last-child {
+    background-color: #ba36bf;
+}
+
+/* n-й */
+p.pseudo:nth-child(2) {
+    font-weight: bold;
+    background-color: #3ad3a5;
+}
+
+/* Стиль для доступных элементов формы */
+input:enabled {
+    border: 2px solid green;
+}
+
+/* Стиль для обязательных элементов формы */
+input:required {
+    border: 2px solid red;
+}
+
+/* Стиль для заблокированных элементов формы */
+input:disabled {
+    background-color: lightgray;
+}
+
+/* Стиль для элементов формы со значениями вне диапазона */
+input:out-of-range {
+    border: 2px solid orange;
+}
+
+/* Стиль для включенных флажков и переключателей */
+input:checked {
+    outline: 2px solid rgb(54, 183, 163);
+}
+
+/* отображение кавычек в зависимости от языка цитаты */
+q.pseudo:lang(en) {
+    quotes: '\201C' '\201D';
+}
+
+/* отображение кавычек в зависимости от языка цитаты */
+q.pseudo:lang(ru){
+    quotes: '\00AB' '\00BB;
+}
+
+/* ? Псевдоэлементы */
+/* !!! about_page.html */
+/* выделить первую букву (или строку) текста абзаца в статье */
+p.psps::first-letter {
+    font-size: 150%;
+    color: red;
+}
+
+/* добавить контекст в начале и конце фрагмента текста */
+p.psps::before {
+    content: "Start: ";
+    font-style: italic;
+}
+
+p.psps::after {
+    content: "End.";
+    font-style: italic;
+}
+
+/* один из списков оформить маркерами – символами юникода */
+ul.psps {
+    list-style: none;
+    padding: 0;
+}
+
+ul.psps li::before {
+    content: "\20aa ";
+    margin-right: 5px;
+}
+
+/* изменять стиль при выделении текста */
+p.psps::selection {
+    background: #ffcc00;
+    color: #30c6c1;
+}
+
+/* ? Шрифты */
+/* !!! about_page.html */
+/* основной (из службы шрифтов), альтернативный, семейство шрифтов */
+/* @import url, @font-face src, <link> href */
+
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+span.fonttt {
+    font-family: 'Arsenal SC', Arial, sans-serif;
+}
+
+/* ? Задний фон сайта */
+body {
+    background-color: #cce7dd;
+}
+
+/* ? Медиа-запросы */
+/* For Laptop */
+@media screen and (min-width: 1000px) and (max-width: 1024px) {
+    body {
+        background-color: #ff0000;
+    }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 1000px) {
+    body {
+        background-color: #0000ff;
+    }
+}
+
+/* ? Изменять вид курсора при наведении на кнопки */
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: grab;
+}
+
+/* ? Для отображения любого текстового фрагмента настроить: отступы и поля,
+заголовки (или любой другой фрагмент текста) оформить с помощью text-transform красную строку,
+межстрочный интервал,
+любой фрагмент оформить капителью (или использовать расширенные возможности font-variant) интервал между словами и символами перенос и разрыв слов шрифты,
+выравнивание текста,
+позиционирование блоков для расположения на странице */
+.fragment{
+    padding: 20px;
+    margin: 10px;
+    text-transform: capitalize; /* Пример text-transform */
+    text-indent: 2em; /* Красная строка */
+    line-height: 1.5; /* Межстрочный интервал */
+    letter-spacing: 1px; /* Интервал между символами */
+    word-spacing: 3px; /* Интервал между словами */
+    text-align: justify; /* Выравнивание текста */
+    hyphens: auto; /* Перенос слов */
+    font-variant: small-caps; /* Пример font-variant */
+}

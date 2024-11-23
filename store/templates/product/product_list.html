@@ -1,6 +1,39 @@
 {% extends "base.html" %}
 {% block title %}Product List{% endblock title %}
 {% block content%}
+    <!-- ? CSS GRID LAYOUT / Для отображения каталога товаров/услуг (инфо из ЛР4) использовать CSS Grid Layout-->
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            padding: 10px;
+            list-style-type: none;
+        }
+
+        .wrapper li {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.1s ease-out, background-color 0.3s;
+        }
+
+        .wrapper li:hover {
+            background-color: #e0e0e0;
+        }
+
+        .wrapper a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .wrapper a:hover {
+            color: green;
+        }
+    </style>
+
     <h1>Product List</h1>
     <form action="{% url 'product_list' %}" method="get" style="margin-bottom: 10px;">
         <label for="search">Search by Name:</label>
@@ -16,12 +49,81 @@
         <button type="submit">Sort</button>
     </form>
     <h2>Products</h2>
-    <ul>
+    <ul class="wrapper">
         {% for product in products %}
-        <li><a href="{% url 'product_detail' product.pk %}">{{ product.name }} - ${{ product.price }}</a></li>
+        <li class="tilt-item">
+            <a href="{% url 'product_detail' product.pk %}">{{ product.name }} - ${{ product.price }}</a>
+        </li>
         {% endfor %}
     </ul>
     <form action="{% url 'product_create' %}" method="get" style="display: inline;">
         <button type="submit">Create</button>
     </form>
+
+    <div class="pagination">
+        <button id="prevPage">Previous</button>
+        <button id="nextPage">Next</button>
+    </div>
+
+    <!-- Pagination -->
+    <script>
+        const items = document.querySelectorAll('.wrapper li');
+        const itemsPerPage = 3;
+        let currentPage = 1;
+
+        function showPage(page) {
+            items.forEach((item, index) => {
+                const start = (page - 1) * itemsPerPage;
+                const end = page * itemsPerPage;
+                if (index >= start && index < end) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            showPage(currentPage);
+        }
+
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) {
+                goToPage(currentPage - 1);
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                goToPage(currentPage + 1);
+            }
+        });
+
+        // Show the first page by default
+        showPage(currentPage);
+    </script>
+
+    <!-- Параллакс (tilt parallax) -->
+    <script>
+        const tiltItems = document.querySelectorAll('.tilt-item');
+
+        tiltItems.forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const { width, height, left, top } = item.getBoundingClientRect();
+                const x = e.clientX - left - width / 2;
+                const y = e.clientY - top - height / 2;
+
+                const rotateX = -y / (height / 5); // Adjust tilt intensity by dividing factor
+                const rotateY = x / (width / 5);
+
+                item.style.transform = `perspective(300px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'perspective(300px) rotateX(0) rotateY(0)';
+            });
+        });
+    </script>
 {% endblock content %}

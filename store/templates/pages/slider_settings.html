@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Slider Settings{% endblock title %}
+{% block content%}
+    <h1>Edit Slider Settings</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Settings</button>
+    </form>
+    <hr>
+    <a href="{% url 'slider' %}" style="display: inline-block; padding: 8px 12px; color: #cce7dd; background-color: black; border-radius: 4px; text-decoration: none; font-weight: bold;">Back to Slider</a>
+{% endblock content %}

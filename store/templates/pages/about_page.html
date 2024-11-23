@@ -1,6 +1,454 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}About Company{% endblock title %}
 {% block content%}
     <h1>About Company</h1>
     <p>Text: {{ company_info.text }}</p>
+
+    <video src="{% static 'git.mp4' %}" controls></video>
+
+    <br>
+
+    <!-- GLOBAL: id, class, style, title, accesskey, tabindex, dir, lang, hiddden, contenteditable, spellcheck,
+    translate, date-*, itemprop, onclick, onfocus -->
+    <!-- html attrs: lang -->
+    <!-- head: title, base, meta, link, style, script, noscript -->
+    <!-- base attrs: href, target - задает окно для всех ссылок на странице относительно -->
+    <!-- meta attrs: charset, content, name -->
+    <!-- link attrs: href, rel, type, media -->
+    <!-- Выделение текста: b, em, sub, sup, i, strong, mark, code, abbr (title), dfn (title), kbd, time (datetime), font, q (cite), span -->
+    <!-- a attrs: href, download, type, target, rel, id (для якоря, у href # в начале) -->
+    <!-- Группировка: p, pre, blockquote (cite), div, span -->
+    <!-- hr, br, wbr -->
+    <!-- Списки: ul (type), ol (type, start, reversed), li (value), dl, dt, dd -->
+    <!-- Фигуры: figure, figcaption -->
+    <!-- h1-h6, hgroup, address (инфо об авторе) -->
+    <!-- section, article, nav, aside, header, footer -->
+    <!-- Детальное описание: details, summary -->
+    <!-- Таблица: table (colspan, rowspan), th, tr, td (headers), caption, thead, tbody, tfoot -->
+    <!-- Форма: form (action - url обработчик формы, method, enctype) -->
+    <!-- input (type: text (size), password, button, submit, reset, checkbox, radio, file; name, value, placeholder) -->
+    <!-- Новые типы email, color, date, url, number (min, max) -->
+    <!-- textarea, select, option, optgroup, datalist, fieldset, legend, label (for to input's id) -->
+    <!-- img (srcset, sizes, picture) -->
+    <!-- iframe, устаревшие: frame, frameset -->
+    <!-- video (без плагинов), audio, track (аудиодорожки), source (разные форматы видео) -->
+
+    <!-- иконка сайта -->
+    <img src="{% static 'img/favicon.ico' %}" alt="Company Logo">
+
+    <pre>
+        This is some <span class="TEXT">text</span>
+        <span class="WITH">with</span>
+        line <span class="fonttt">breaks</span>
+        and    tabs
+    </pre>
+
+    <dl>
+        <dt>Term</dt>
+        <dd>This is the definition of the term.</dd>
+        <dt>Term2</dt>
+        <dd>This is the definition of the term2.</dd>
+    </dl>
+
+    <h1 class="fragment">Test super text</h1>
+
+    <!-- Настроить оформление остальных элементов страницы – история по годам списком, реквизиты выделить шрифтом, видео/аудио -стиль выбрать самим. -->
+    <section>
+        <h2>History by Years</h2>
+        <p class="description">
+            <span class="history-2000">2000:</span> Company was founded.<br>
+            <span class="2010-year">2010:</span> Company expanded internationally.<br>
+            <span class="YEAR">2020:</span> Company launched new product line.
+        </p>
+    </section>
+
+    <article>
+        <h2>Details</h2>
+        <p class="psps" style="font-size: 20px; font-weight: bold; font-family: Arial, sans-serif;">
+            Address: 123 Company Street, City, Country.
+            Phone: +1 234 567 890.
+            Email: info@company.com.
+        </p>
+    </article>
+
+    <!-- Использовать трансформацию для отображения логотипа (функция на выбор) -->
+    <style>
+        .logo {
+            transform: rotate(15deg);
+        }
+    </style>
+
+    <img src="{% static 'img/favicon.ico' %}" alt="Company Logo" class="logo">
+
+
+    <!-- Для сертификата использовать изображения для границ из графического файла (не забыть про вендорные префиксы), фоновое изображение, градиент, z-index, настройку шрифтов, выравнивание текста,  и т.д.  -->
+    <style>
+    .certificate {
+        border: 30px solid; /* Использование изображения для границ из графического файла */
+        border-image-source: url('{% static "img/border.jpg" %}');
+        border-image-slice: 30;
+        border-image-repeat: round;
+        -webkit-transform: none; /* Вендорные префиксы */
+        background: linear-gradient(to right, #ff7e5f, #feb47b, #ffdbb4),
+                url('{% static "img/certificate_bg.jpg" %}'); /* градиент / фоновое изображение */
+        background-size: cover;
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 3; /* z-index */
+        text-align: center; /* выравнивание */
+        color: #333;
+        font-size: 24px;
+        transition: background 1.5s;
+    }
+
+    .certificate-block{
+        z-index: 15;
+        position: relative;
+        background: lightgreen;
+        width: 20%;
+        left: 70%;
+        top: -200px;
+        height: 7em;
+        opacity: 0.9;
+        font-weight: bold;
+    }
+
+    .certificate:hover {
+        background-image: url('{% static "img/certificate_bg.jpg" %}');
+    }
+    </style>
+
+    <div class="certificate">
+        <h1>Certificate</h1>
+        <p>This is to certify that <strong>Our Site</strong></p>
+        <p>has successfully completed the course "Good chemical utilities"</p>
+        <p>Issued on: <em>September 5, 2024</em></p>
+    </div>
+    <div class="certificate-block">Signed !</div>
+
+    <!-- В таблицах убрать двойные линии между ячейками внутри таблицы
+        изменить фон в пустых ячейках
+        оформить заголовок таблицы над таблицей
+        применить горизонтальное и вертикальное выравнивание информации в ячейках и настроить расположение таблицы на странице
+        стилизовать строки и столбцы
+        -->
+    <style>
+        /* убрать двойные линии между ячейками внутри таблицы */
+        [data-table] {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        /* оформить заголовок таблицы над таблицей */
+        caption{
+            caption-side: top;
+        }
+
+        /* применить горизонтальное и вертикальное выравнивание информации в ячейках и настроить расположение таблицы на странице */
+        [data-cell] {
+            border: 1px solid #dddddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* изменить фон в пустых ячейках */
+        /* empty-cells: show; */
+        [data-cell]:empty {
+            background-color: #f9f9f9;
+        }
+
+        /* стилизовать строки и столбцы */
+        [data-row]:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        [data-row]:hover {
+            background-color: #f9f9f9;
+        }
+
+        [data-header],
+        [data-cell] {
+            border: 1px solid #dddddd;
+        }
+
+        [data-header]:first-child,
+        [data-cell]:first-child {
+            border-left: none;
+        }
+
+        [data-header]:last-child,
+        [data-cell]:last-child {
+            border-right: none;
+        }
+
+        [data-row]:first-child [data-header] {
+            border-top: none;
+        }
+
+        [data-row]:last-child [data-cell] {
+            border-bottom: none;
+        }
+    </style>
+
+    <table data-table>
+        <caption style="text-align: center;"><h2>SUPER TABLE</h2></caption>
+        <thead>
+            <tr data-row>
+                <th data-header>Header 1</th>
+                <th data-header>Header 2</th>
+                <th data-header>Header 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-row>
+                <td data-cell>Data 1</td>
+                <td data-cell></td>
+                <td data-cell>Data 3</td>
+            </tr>
+            <tr data-row>
+                <td data-cell>Data 4</td>
+                <td data-cell>Data 5</td>
+                <td data-cell>Data 6</td>
+            </tr>
+            <tr data-row>
+                <td data-cell>Data 7</td>
+                <td data-cell></td>
+                <td data-cell>Data 9</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- сематическая верстка -->
+    <section>
+        <article>
+            <header>
+                <!-- глобальные атрибуты (class) -->
+                <h2>Certificate of Achievement</h2>
+            </header>
+            <p>This is to certify that</p>
+
+            <!-- семантическое выделение текста -->
+            <!-- определение -->
+            <p><dfn title="site">Our Site</dfn></p>
+            <p>has <em>successfully</em> <i>completed</i> <s>the</s> <strong>course</strong> <b>"<sub>Good</sub>
+                    <sup>chemical</sup> utilities"</b></p>
+            <footer itemscope itemtype="http://schema.org/Date">
+                <!-- микроданные -->
+                <p itemprop="date">Issued on: September 5, 2024</p>
+                <p itemprop="author">Matsvei</p>
+            </footer>
+        </article>
+    </section>
+
+    <!-- пример листинга -->
+    <!-- сокращений -->
+    <p><abbr title="Python">PY: </abbr><code>print("Hello")</code></p>
+
+    <!-- цитата -->
+    <q cite="http://en.wikipedia.org/wiki/Apple" class="pseudo">The apple is
+        the pomaceous fruit of the apple tree.</q>
+
+    <!-- цитата v2 -->
+    <blockquote cite="http://en.wikipedia.org/wiki/Apple">
+        The apple is
+        the pomaceous fruit of the apple tree.
+    </blockquote>
+
+    <br>
+
+    <!-- дата-время -->
+    At <time datetime="15:00">3 o'clock</time>
+    on <time datetime="2018-09-05T15:00:00">September 5th</time>.
+
+    <br>
+
+    <!-- четверостишье с фиксированным и потенциальным переводом строки -->
+    TEXT<br>
+    hello hello hello hello hello <br>world world world world world<br>OK OK OK OK OK OK OK OK OK OK<br>NICE NICE NICE NICE <wbr> NICE NICE NICE NICE NICE<br>
+
+    <br>
+
+    <!-- ссылка для скачивания документа -->
+    <a href="{% static 'git.mp4' %}" download="git.mp4">
+        Download git.mp4
+    </a>
+
+    <br>
+
+    <!-- якорь -->
+    <a href="#n1">См.примечание в конце</a>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <p><a id="n1"></a>Это примечание</p>
+
+    <br>
+
+    <!-- контейнерный элемент -->
+    <div>
+        <p class="pseudo">Hello 1</p>
+        <p class="pseudo">Hello 2</p>
+        <p class="pseudo">Hello 3</p>
+    </div>
+
+    <!-- список (type устарел) -->
+    <ul class="psps">
+        <li>One</li>
+        <li>Two</li>
+    </ul>
+
+    <!-- фигура -->
+    <figure>
+        <figcaption>Listing 23. Using the code element</figcaption>
+        <code>
+        var fruits = ["apples", "oranges", "mangoes", "cherries"];<br>
+        document.writeln("I like " + fruits.length + " fruits");
+      </code>
+    </figure>
+
+    <!-- горизонтальная навигация -->
+    <div class="sidenav">
+        <a href="#home">Главная</a>
+        <a href="#news">Новости</a>
+        <a href="#contact">Контакты</a>
+        <a href="#about">О нас</a>
+    </div>
+
+    <!-- вертикальная навигация -->
+    <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#news">Новости</a></li>
+        <li><a href="#contact">Контакты</a></li>
+        <li><a href="#about">О нас</a></li>
+    </ul>
+
+    <br>
+
+    <!-- таблица с заголовочными ячейками, заполненная цифровыми и текстовыми данными, объединенными ячейками, атрибутом headers (не использовать для верстки, только для данных) -->
+    <table border="1px">
+        <tr class="pseudo">
+            <th>Month</th>
+            <th colspan="2">Savings</th>
+        </tr>
+        <tr class="pseudo">
+            <td headers="Month">January</td>
+            <td headers="Savings">$100</td>
+            <td headers="Savings">Groceries</td>
+        </tr>
+        <tr class="pseudo">
+            <td headers="Month">February</td>
+            <td headers="Savings">$150</td>
+            <td headers="Savings">Utilities</td>
+        </tr>
+        <tr class="pseudo">
+            <td headers="Month">March</td>
+            <td headers="Savings">$200</td>
+            <td headers="Savings">Dining out</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <!-- форма -->
+    <!-- разные виды input (валидация required) -->
+    <!-- контейнеры -->
+    <form action="http://example.com/app/profile.php" method="post">
+        <fieldset title="info">
+            <legend>User info</legend>
+            Имя:
+            <input type="text" name="username" class="pseudo"><br>
+            Адрес эл. почты:
+            <input type="text" name="email" required class="pseudo"><br>
+        </fieldset>
+        <p>
+            Fruit: <input list="fruitlist" id="fave" name="fave" class="pseudo"/>
+        </p>
+        Пол:<br>
+        <input type="radio" name="sex" value="male" class="pseudo">мужской<br>
+        <input type="radio" name="sex" value="female" class="pseudo">женский<br>
+        <input type="radio" name="sex" value="female" class="pseudo" disabled>...<br>
+
+        <input type="submit" value="Отправить" class="pseudo">
+        <input type="reset" value="Очистить" class="pseudo">
+    </form>
+
+    <!-- выпадающий список -->
+    <datalist id="fruitlist">
+        <option value="Apples" label="Lovely Apples" />
+        <option value="Oranges">Refreshing Oranges</option>
+        <option value="Cherries" />
+    </datalist>
+
+    <!-- выпадающий список v2 -->
+    <select name="s1" size="3">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <br><br>
+
+    <!-- контейнер optgroup -->
+    <select size="7" name="list">
+        <option value="v1">Not in group</option>
+        <optgroup label="Group 1">
+            <option value="v2">Item G1-1</option>
+            <option value="v3">Item G1-2</option>
+        </optgroup>
+        <optgroup label="Group 2">
+            <option value="v4">Item G2-1</option>
+            <option value="v5">Item G2-2</option>
+        </optgroup>
+    </select>
+
+    <br><br>
+
+    <!-- кнопка -->
+    <form action="http://server.com" method="post">
+        <button type="button" name="btn">
+            <p>1</p>
+            <p>2</p>
+        </button>
+    </form>
+
+    <!-- фрейм -->
+    <a href="https://www.wikiwand.com/ru/HTML" target="fr">HTML</a>
+    <iframe name="fr" width="400" height="150"></iframe>
+
+    <br><br>
+
+    <!-- изображение (плюс за адаптивные) -->
+    <img src="{% static 'img/favicon.ico' %}" alt="Company Logo"
+    srcset="{% static 'img/favicon.ico' %} 1x, {% static 'img/favicon.ico' %} 2x"
+    sizes="(max-width: 40em) 100vw, 50vw">
+
+    <br><br><br>
+
+    <!-- элементы для внедрения объектов (embed vs object) -->
+    <embed src="http://www.youtube.com/v/qzA60hHca9s?version=3"
+    type="application/x-shockwave-flash"
+    width="560" height="349"
+    allowfullscreen="true">
+
+    <!-- видео/аудио - стиль выбрать самим -->
+    <style>
+        video,
+        audio {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: green;
+        }
+    </style>
+
+    <!-- source и track для разного расширения и субтитров -->
+    <video src="{% static 'git.mp4' %}" controls></video>
+
+    <br><br><br>
+
+    <!-- элементы для отображения аудио информации -->
+    <audio src="{% static 'git.mp4' %}" controls></audio>
+
 {% endblock content %}

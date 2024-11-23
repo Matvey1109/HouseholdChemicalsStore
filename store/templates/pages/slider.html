@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Slider{% endblock title %}
+{% block content%}
+    <script src="{% static 'js/slider.js' %}"></script>
+    <style>
+        #slider {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides .slide {
+            position: relative;
+            display: none;
+            text-align: center;
+        }
+
+        .slides .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .counter {
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            color: #fff;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .pagination-button {
+            display: inline-block;
+            margin: 0 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            border: none;
+        }
+
+        .pagination-button.active {
+            background-color: #555;
+        }
+    </style>
+
+    <div id="slider" data-loop="{{ settings.loop }}" data-auto="{{ settings.auto }}"
+        data-stopMouseHover="{{ settings.stopMouseHover }}" data-delay="{{ settings.delay }}">
+
+        <div class="slides">
+            {% for slide in slides %}
+            <a href="{{ slide.link }}" class="slide-link">
+                <div class="slide" {% if forloop.first %}style="display: block;" {% endif %}>
+                    <img src="{{ slide.image.url }}" alt="{{ slide.caption }}">
+                    <div class="caption">{{ slide.caption }}</div>
+                    <div class="counter">{{ forloop.counter }}/{{ slides|length }}</div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        {% if settings.navs %}
+        <button id="prev" class="nav-button" onclick="prevSlide()">&#10094;</button>
+        <button id="next" class="nav-button" onclick="nextSlide()">&#10095;</button>
+        {% endif %}
+
+        {% if settings.pags %}
+        <div class="pagination">
+            {% for slide in slides %}
+            <button onclick="goToSlide({{ forloop.counter0 }})" class="pagination-button">{{ forloop.counter }}</button>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <a href="{% url 'slider_settings' %}"
+        style="display: inline-block; padding: 8px 12px; color: #cce7dd; background-color: black; border-radius: 4px; text-decoration: none; font-weight: bold;">
+        Edit Slider Settings
+    </a>
+
+    <!-- Обратный отсчет -->
+    <h2 style="text-align: center;">COUNTDOWN:</h2>
+    <div class="countdown" id="countdown" style="font-size: 2em; text-align: center; margin-top: 2%;">Countdown</div>
+
+    <script>
+        const countdownElement = document.getElementById('countdown');
+
+        function startCountdown() {
+            const savedEndTime = localStorage.getItem('countdownEndTime');
+            let endTime;
+
+            if (savedEndTime) {
+                endTime = new Date(parseInt(savedEndTime, 10));
+            } else {
+                endTime = new Date();
+                endTime.setHours(endTime.getHours() + 1);
+                localStorage.setItem('countdownEndTime', endTime.getTime());
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const timeLeft = endTime - now;
+
+                if (timeLeft <= 0) {
+                    countdownElement.textContent = "Time's up!";
+                    localStorage.removeItem('countdownEndTime');
+                } else {
+                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                    countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
+                }
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        startCountdown();
+    </script>
+{% endblock content %}

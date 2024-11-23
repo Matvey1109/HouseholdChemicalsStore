@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Animation</title>
+    <style>
+        /* Container for the animation */
+        .animation-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-color: #d3d3d3;
+            overflow: hidden;
+        }
+
+        /* Dirty surface */
+        .dirty-surface {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #7d7d7d;
+            transition: opacity 2s ease-in-out;
+        }
+
+        /* Cleaner bottle */
+        .cleaner {
+            position: absolute;
+            width: 60px;
+            height: 100px;
+            background-color: #4a90e2;
+            border-radius: 5px;
+            top: 0;
+            left: -60px;
+            transform-origin: bottom right;
+            animation: move-in 2s 1s forwards, tilt 1s 3s forwards;
+        }
+
+        /* Cleaner splash */
+        .cleaner-splash {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #c2e7da;
+            border-radius: 50%;
+            top: 50%;
+            left: 20%;
+            opacity: 0;
+            animation: splash 1s 3.5s forwards;
+        }
+
+        /* Sponge wipe */
+        .sponge {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #f0d27f;
+            border-radius: 20px;
+            top: 20%;
+            left: -200px;
+            opacity: 0.8;
+            animation: wipe 2s 4.5s forwards;
+        }
+
+        .sponge::before,
+        .sponge::after {
+            content: '';
+            position: absolute;
+            background-color: #000;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+
+        .sponge::before {
+            top: 20px;
+            left: 20px;
+        }
+
+        .sponge::after {
+            top: 60px;
+            left: 140px;
+        }
+
+        /* Clean surface reveal */
+        .clean-surface {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #cce7dd;
+            opacity: 0;
+            animation: reveal 1s 6.5s forwards;
+        }
+
+        /* Company name */
+        .company-name {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 40%;
+            font-size: 2em;
+            font-weight: bold;
+            color: #4b9c68;
+            opacity: 0;
+            animation: appear 1s 7s forwards;
+        }
+
+        /* Animations */
+        @keyframes move-in {
+            to {
+                left: 10%;
+            }
+        }
+
+        @keyframes tilt {
+            to {
+                transform: rotate(+80deg);
+            }
+        }
+
+        @keyframes splash {
+            to {
+                opacity: 1;
+                transform: scale(5);
+            }
+        }
+
+        @keyframes wipe {
+            to {
+                left: 120%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes appear {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="animation-container">
+        <div class="dirty-surface"></div>
+        <div class="cleaner"></div>
+        <div class="cleaner-splash"></div>
+        <div class="sponge"></div>
+        <div class="clean-surface"></div>
+        <div class="company-name">Household chemical store!</div>
+    </div>
+
+</body>
+
+</html>

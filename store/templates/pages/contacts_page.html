@@ -1,20 +1,419 @@
 {% extends "base.html" %}
 {% block title %}Contacts{% endblock title %}
-{% block content%}
-    <h1>Contacts</h1>
-    <ul>
+{% block content %}
+<style>
+    .contact-table,
+    .secondary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .contact-table th,
+    .secondary-table th,
+    .contact-table td,
+    .secondary-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .contact-table th,
+    .secondary-table th {
+        background-color: #f2f2f2;
+    }
+
+    .contact-table tr:hover,
+    .secondary-table tr:hover {
+        background-color: #f9f9f9;
+        cursor: pointer;
+    }
+
+    .contact-details {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #f9f9f9;
+    }
+
+    .error {
+        border-color: red;
+        background-color: pink;
+    }
+</style>
+
+<style>
+    /* Preloader styling */
+    #preloader {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        /* Adjust the size as needed */
+        height: 100px;
+        /* Adjust the size as needed */
+        background-color: #fff;
+        /* Optional: Add background color */
+        border-radius: 8px;
+        /* Optional: Rounds the square edges */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        z-index: 9999;
+    }
+
+    /* Fade-out transition */
+    #preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
+
+<!-- Preloader inclusion -->
+<div id="preloader">
+    {% include 'preloader.html' %}
+</div>
+
+<script>
+    // Preloader logic
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            document.getElementById("preloader").style.display = "none";
+            document.getElementById("contacts-content").style.display = "block";
+        }, 500); // 0.5 seconds delay
+    });
+</script>
+
+<h1>Contacts</h1>
+
+<!-- Add Contact Form -->
+<button id="add-contact-button">Add Contact</button>
+<div id="add-contact-form" style="display: none; margin-top: 20px;">
+    <h2>Add New Contact</h2>
+    <label for="new-name">Name:</label>
+    <input type="text" id="new-name" required><br><br>
+
+    <label for="new-photo">Photo URL:</label>
+    <input type="text" id="new-photo" placeholder="http://example.com/photo.php" required><br><br>
+
+    <label for="new-description">Description:</label>
+    <textarea id="new-description" required></textarea><br><br>
+
+    <label for="new-phone">Phone:</label>
+    <input type="text" id="new-phone" placeholder="+375 (29) 111-22-33" required><br><br>
+
+    <label for="new-email">Email:</label>
+    <input type="email" id="new-email" required><br><br>
+
+    <p id="validation-message" style="color: red;"></p>
+
+    <button id="add-to-table-button" disabled>Add to Table</button>
+</div>
+
+<!-- Sorting, Filtering, and Pagination -->
+<div>
+    <label for="sort-options">Sort by:</label>
+    <select id="sort-options">
+        <option value="name">Name</option>
+        <option value="description">Description</option>
+        <option value="phone">Phone Number</option>
+        <option value="email">Email</option>
+    </select>
+    <label>
+        <input type="checkbox" id="sort-descending"> Descending
+    </label>
+</div>
+
+<br>
+
+<div>
+    <label for="filter-input">Filter by text:</label>
+    <input type="text" id="filter-input">
+    <button id="filter-button">Find</button>
+</div>
+
+<br>
+
+<div class="pagination-controls">
+    <button id="prev-page" disabled>Previous</button>
+    <button id="next-page">Next</button>
+</div>
+
+<br>
+
+<!-- Contact Table -->
+<h2>Contact Table</h2>
+<table class="contact-table" id="contact-table">
+    <thead>
+        <tr>
+            <th>Select</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Photo URL</th>
+        </tr>
+    </thead>
+    <tbody id="contact-list">
         {% for contact in contacts %}
-        <li>
-            <h2>{{ contact.employee.name }}</h2>
-            <p>{{ contact.description }}</p>
-            {% if contact.photo %}
-            <img src="{{ contact.photo.url }}" alt="{{ contact.employee.name }} Photo">
-            {% endif %}
-            {% if contact.employee.phone_number %}
-            <p>Phone: {{ contact.employee.phone_number }}</p>
-            {% endif %}
-            <p>Email: {{ contact.employee.email }}</p>
-        </li>
+        <tr class="contact-item" data-name="{{ contact.employee.name }}" data-description="{{ contact.description }}"
+            data-phone="{{ contact.employee.phone_number }}" data-email="{{ contact.employee.email }}"
+            data-photo="{{ contact.photo }}">
+            <td><input type="checkbox" class="contact-checkbox"></td>
+            <td>{{ contact.employee.name }}</td>
+            <td>{{ contact.description }}</td>
+            <td>{{ contact.employee.phone_number }}</td>
+            <td>{{ contact.employee.email }}</td>
+            <td>{{ contact.photo }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </tbody>
+</table>
+
+<!-- Secondary Table -->
+<table class="secondary-table" id="secondary-contact-table" style="display: none;">
+    <thead>
+        <tr>
+            <th>Select</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Photo URL</th>
+        </tr>
+    </thead>
+    <tbody id="secondary-contact-list"></tbody>
+</table>
+
+<div id="contact-details" class="contact-details" style="display: none;">
+    <h2>Contact Details</h2>
+    <p><strong>Name:</strong> <span id="details-name"></span></p>
+    <p><strong>Description:</strong> <span id="details-description"></span></p>
+    <p><strong>Phone:</strong> <span id="details-phone"></span></p>
+    <p><strong>Email:</strong> <span id="details-email"></span></p>
+    <p><strong>Photo URL:</strong> <span id="details-photo"></span></p>
+</div>
+
+<!-- Bonus Button and Message -->
+<button id="bonus-button">Bonus</button>
+<div id="bonus-message" style="margin-top: 20px; color: green;"></div>
+
+<script>
+    const contactsData = Array.from(document.querySelectorAll(".contact-item"));
+    const secondaryContactList = document.getElementById("secondary-contact-list");
+    const contactsPerPage = 3;
+    let currentPage = 1;
+    let filteredContacts = contactsData;
+
+    // Global array to track selected contacts across pages
+    const selectedContacts = new Set();
+
+    document.getElementById("sort-options").addEventListener("change", () => {
+        sortContacts();
+        displayPage(1);
+    });
+    document.getElementById("sort-descending").addEventListener("change", () => {
+        sortContacts();
+        displayPage(1);
+    });
+    document.getElementById("filter-button").addEventListener("click", () => {
+        filterContacts();
+        displayPage(1);
+    });
+    document.getElementById("prev-page").addEventListener("click", () => displayPage(currentPage - 1));
+    document.getElementById("next-page").addEventListener("click", () => displayPage(currentPage + 1));
+
+    document.getElementById("add-contact-button").addEventListener("click", () => {
+        document.getElementById("add-contact-form").style.display = 'block';
+    });
+
+    const urlRegex = /^(https?:\/\/).*\.(php|html)$/;
+    const phoneRegex = /^(8|\+375)[ ]?\(?\d{2,3}\)?[ ]?\d{3}[ ]?[-]?\d{2}[ ]?[-]?\d{2}$/;
+
+    function validateInput() {
+        const photoInput = document.getElementById("new-photo");
+        const phoneInput = document.getElementById("new-phone");
+
+        let isValid = true;
+        let message = "";
+
+        if (!urlRegex.test(photoInput.value)) {
+            photoInput.classList.add("error");
+            isValid = false;
+            message += "Invalid URL format. ";
+        } else {
+            photoInput.classList.remove("error");
+        }
+
+        if (!phoneRegex.test(phoneInput.value)) {
+            phoneInput.classList.add("error");
+            isValid = false;
+            message += "Invalid phone number format.";
+        } else {
+            phoneInput.classList.remove("error");
+        }
+
+        document.getElementById("validation-message").textContent = message;
+        document.getElementById("add-to-table-button").disabled = !isValid;
+    }
+
+    document.getElementById("new-photo").addEventListener("input", validateInput);
+    document.getElementById("new-phone").addEventListener("input", validateInput);
+
+    document.getElementById("add-to-table-button").addEventListener("click", () => {
+        // Get the values from the form inputs
+        const contactName = document.getElementById("new-name").value;
+        const contactDescription = document.getElementById("new-description").value;
+        const contactPhone = document.getElementById("new-phone").value;
+        const contactEmail = document.getElementById("new-email").value;
+        const contactPhotoURL = document.getElementById("new-photo").value;
+
+        // Create a new table row element
+        const newRow = document.createElement("tr");
+
+        // Set the necessary data attributes for the row
+        newRow.setAttribute("data-name", contactName);
+        newRow.setAttribute("data-description", contactDescription);
+        newRow.setAttribute("data-phone", contactPhone);
+        newRow.setAttribute("data-email", contactEmail);
+        newRow.setAttribute("data-photo", contactPhotoURL);
+
+        // Add the inner HTML for the row (this will also be the visible content of the row)
+        newRow.innerHTML = `
+            <td><input type="checkbox" class="contact-checkbox"></td>
+            <td>${contactName}</td>
+            <td>${contactDescription}</td>
+            <td>${contactPhone}</td>
+            <td>${contactEmail}</td>
+            <td>${contactPhotoURL}</td>
+        `;
+
+        // Append the new row to the secondary contact table
+        const checkbox = newRow.querySelector(".contact-checkbox");
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                selectedContacts.add(contactName);
+            } else {
+                selectedContacts.delete(contactName);
+            }
+        });
+
+        secondaryContactList.appendChild(newRow);
+        toggleSecondaryTableVisibility();
+
+        // Clear the form and validation message
+        document.getElementById("add-contact-form").reset();
+        document.getElementById("validation-message").textContent = "";
+
+        // Hide the form after adding the contact
+        document.getElementById("add-contact-form").style.display = "none";
+    });
+
+
+    function sortContacts() {
+        const sortBy = document.getElementById("sort-options").value;
+        const isDescending = document.getElementById("sort-descending").checked;
+
+        filteredContacts.sort((a, b) => {
+            const aValue = a.getAttribute(`data-${sortBy}`).toLowerCase();
+            const bValue = b.getAttribute(`data-${sortBy}`).toLowerCase();
+            return isDescending ? bValue.localeCompare(aValue) : aValue.localeCompare(bValue);
+        });
+    }
+
+    function filterContacts() {
+        const filterText = document.getElementById("filter-input").value.toLowerCase();
+
+        filteredContacts = contactsData.filter(contact => {
+            return (
+                contact.getAttribute("data-name").toLowerCase().includes(filterText) ||
+                contact.getAttribute("data-description").toLowerCase().includes(filterText) ||
+                contact.getAttribute("data-phone").toLowerCase().includes(filterText) ||
+                contact.getAttribute("data-email").toLowerCase().includes(filterText)
+            );
+        });
+    }
+
+    function displayPage(page) {
+        const contactList = document.getElementById("contact-list");
+        contactList.innerHTML = "";
+
+        const start = (page - 1) * contactsPerPage;
+        const end = start + contactsPerPage;
+        const contactsToDisplay = filteredContacts.slice(start, end);
+
+        contactsToDisplay.forEach(contact => {
+            contactList.appendChild(contact);
+            const checkbox = contact.querySelector(".contact-checkbox");
+            const name = contact.getAttribute("data-name");
+
+            // Set checkbox state based on global selection
+            checkbox.checked = selectedContacts.has(name);
+
+            // Add event listener to update selectedContacts set
+            checkbox.addEventListener("change", () => {
+                if (checkbox.checked) {
+                    selectedContacts.add(name);
+                } else {
+                    selectedContacts.delete(name);
+                }
+            });
+        });
+
+        currentPage = page;
+        document.getElementById("prev-page").disabled = currentPage === 1;
+        document.getElementById("next-page").disabled = end >= filteredContacts.length;
+    }
+
+    // Display contact details on row click
+    document.getElementById("contact-list").addEventListener("click", (event) => {
+        if (event.target.tagName === "TD") {
+            const row = event.target.closest(".contact-item");
+            displayContactDetails(row);
+        }
+    });
+
+    document.getElementById("secondary-contact-list").addEventListener("click", (event) => {
+        if (event.target.tagName === "TD") {
+            const row = event.target.closest("tr");
+            if (row) {
+                displayContactDetails(row);
+            }
+        }
+    });
+
+    function displayContactDetails(contact) {
+        document.getElementById("details-name").textContent = contact.getAttribute("data-name");
+        document.getElementById("details-description").textContent = contact.getAttribute("data-description");
+        document.getElementById("details-phone").textContent = contact.getAttribute("data-phone");
+        document.getElementById("details-email").textContent = contact.getAttribute("data-email");
+        document.getElementById("details-photo").textContent = contact.getAttribute("data-photo");
+        document.getElementById("contact-details").style.display = "block";
+    }
+
+    // Function to check if there are rows in the secondary contact list
+    function toggleSecondaryTableVisibility() {
+        const secondaryContactTable = document.getElementById("secondary-contact-table");
+        secondaryContactTable.style.display = secondaryContactList.rows.length > 0 ? "table" : "none";
+    }
+
+    // Bonus
+    document.getElementById("bonus-button").addEventListener("click", () => {
+        if (selectedContacts.size > 0) {
+            const namesList = Array.from(selectedContacts).join(", ");
+            document.getElementById("bonus-message").textContent = `Congratulations to ${namesList} for receiving the bonus!`;
+        } else {
+            document.getElementById("bonus-message").textContent = "No contacts selected for the bonus.";
+        }
+    });
+
+    // Initial sort and display
+    sortContacts();
+    displayPage(1);
+    toggleSecondaryTableVisibility();
+</script>
+
 {% endblock content %}

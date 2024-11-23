@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Basket Animation{% endblock title %}
+{% block content%}
+    <style>
+        /* Three-column layout */
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            overflow-y: hidden;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .basket-1 {
+            position: fixed;
+            bottom: -20px;
+            z-index: 10;
+            left: 120px;
+        }
+
+        .basket-2 {
+            position: fixed;
+            bottom: -20px;
+            z-index: 10;
+            left: 690px;
+            transform: rotate(180deg);
+            top: 65px;
+        }
+
+        .basket-3 {
+            position: fixed;
+            bottom: -20px;
+            z-index: 10;
+            left: 1250px;
+        }
+
+        .intro-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .intro-text h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #333;
+        }
+
+        .intro-text p {
+            font-size: 1.2em;
+            color: #666;
+        }
+    </style>
+
+    <div class="intro-text">
+        <h1>Welcome to the Basket Animation</h1>
+        <p>Enjoy this visual experience as objects scroll smoothly in different columns. Scroll down to see the effect in
+            action!</p>
+    </div>
+
+    <div class="columns">
+        <div class="column column-reverse">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+        </div>
+        <div class="column">
+            <img src="{% static 'img/basket.jpg' %}" alt="Basket" class="basket-1">
+            <img src="{% static 'img/basket.jpg' %}" alt="Basket" class="basket-2">
+            <img src="{% static 'img/basket.jpg' %}" alt="Basket" class="basket-3">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+        </div>
+        <div class="column column-reverse">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+            <img src="{% static 'img/cleaner.png' %}" alt="">
+        </div>
+    </div>
+
+    <script>
+        // As we're about to shift content out of .columns, we need it to hide its overflow
+        document.querySelector(".columns").style.overflowY = "hidden";
+
+        // Set up timeline
+        const timeline = new ScrollTimeline({
+            source: document.documentElement,
+        });
+
+        // Loop all eligible columns
+        document.querySelectorAll(".column-reverse").forEach(($column) => {
+            // Flip item order in reverse columns
+            $column.style.flexDirection = "column-reverse";
+
+            // Hook Animation
+            $column.animate(
+                {
+                    transform: [
+                        "translateY(calc(-100% + 100vh))",
+                        "translateY(calc(100% - 100vh))"
+                    ]
+                },
+                {
+                    fill: "both",
+                    timeline
+                }
+            );
+        });
+    </script>
+{% endblock content %}

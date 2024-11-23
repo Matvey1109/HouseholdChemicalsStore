@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Checkbox{% endblock title %}
+{% block content%}
+    <style>
+        #settings {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 300px;
+        }
+    </style>
+
+    <h1>Example Page with Adjustable Settings</h1>
+
+    <label>
+        <input type="checkbox" id="toggleSettings">Change settings
+    </label>
+
+    <div id="settings">
+        <label for="fontSize">Font size:</label>
+        <input type="number" id="fontSize" value="16" min="8" max="40">px<br><br>
+
+        <label for="textColor">Text color:</label>
+        <input type="color" id="textColor" value="#000000"><br><br>
+
+        <label for="backgroundColor">Background color:</label>
+        <input type="color" id="backgroundColor" value="#ffffff"><br><br>
+    </div>
+
+    <p id="text">This text changes its font size, color, and background color.</p>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/300" alt="Sample image">
+    </div>
+
+    <div class="container">
+        <h2>Enter your birthdate</h2>
+        <input type="date" id="birthDate">
+        <button onclick="checkAge()">Check age</button>
+        <p id="message"></p>
+    </div>
+
+    <!-- На одной из страниц добавьте флажок, при нажатии на который генерируются элементы для изменения размера шрифта и цвета текста, цвета фона страницы. Размеры изображений не должны изменяться. -->
+    <script>
+        // Get elements
+        const toggleSettings = document.getElementById('toggleSettings');
+        const settingsDiv = document.getElementById('settings');
+        const fontSizeInput = document.getElementById('fontSize');
+        const textColorInput = document.getElementById('textColor');
+        const backgroundColorInput = document.getElementById('backgroundColor');
+        const textElement = document.getElementById('text');
+        const bodyElement = document.body;
+
+        // Toggle visibility of settings based on checkbox
+        toggleSettings.addEventListener('change', function () {
+            settingsDiv.style.display = toggleSettings.checked ? 'block' : 'none';
+        });
+
+        // Event listeners to change font size, text color, and background color
+        fontSizeInput.addEventListener('input', function () {
+            textElement.style.fontSize = fontSizeInput.value + 'px';
+        });
+
+        textColorInput.addEventListener('input', function () {
+            textElement.style.color = textColorInput.value;
+        });
+
+        backgroundColorInput.addEventListener('input', function () {
+            bodyElement.style.backgroundColor = backgroundColorInput.value;
+        });
+    </script>
+
+    <!-- Запрос даты рождения, расчет количества лет, сообщение о дне недели введенной даты для совершеннолетних и алерт о необходимости разрешения родителей на использование сайта, если несовершеннолетний. -->
+    <script>
+        function checkAge() {
+            const birthDateInput = document.getElementById("birthDate").value;
+            if (!birthDateInput) {
+                alert("Please enter your birthdate");
+                return;
+            }
+
+            const birthDate = new Date(birthDateInput);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            const dayOfWeek = birthDate.toLocaleDateString("en-EN", { weekday: "long" });
+
+            const messageEl = document.getElementById("message");
+            if (age >= 18) {
+                messageEl.textContent = `You was born on ${dayOfWeek}. You are ${age} years old.`;
+            } else {
+                alert("You are a minor. Parental permission is required to use the site.");
+                messageEl.textContent = "";
+            }
+        }
+    </script>
+{% endblock content %}
